@@ -26,8 +26,8 @@ Windows:
 
 ## Links
 
-http://backbonejs.org
-http://ampersandjs.com
+[BackboneJS](http://backbonejs.org)
+[AmpersandJS](http://ampersandjs.com)
 
 ## License
 
