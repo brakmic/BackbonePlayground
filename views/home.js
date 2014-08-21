@@ -5,7 +5,6 @@ module.exports = Backbone.View.extend({
         'click input[type=button]': 'clickReact'
     },
     initialize: function(){
-        console.log('Home view loaded');
         this.render();
     },
     render: function(){

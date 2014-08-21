@@ -5,20 +5,17 @@ var HomeView = require('./views/home');
 
 module.exports = {
     init: function(){
+
         var self = window.app = this;
-        window.stringify = stringify;
+        window.app.stringify = stringify; //for easier logging of objects
+        window.app.User = User; //for testing in the console
+
         domReady(function(){
             self.startApp();
         });
     },
     startApp: function(){
         console.log('Welcome to the Backbone Playground');
-
-        var user = new User({
-            name: 'Dummy',
-            age: 10
-        });
-        console.log('User > ' + stringify(user));
 
         var home = new HomeView({
             el: document.body
