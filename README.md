@@ -12,7 +12,7 @@ All config files are located in the configs-directory.
 If you're not using one of the available run-scripts you must set the GETCONFIG_ROOT manually.
 
 Windows: 
-`GETCONGIF_ROOT=%CD%\configs`
+`set GETCONGIF_ROOT=%CD%\configs`
 
 *nix bash:
 `` export GETCONFIG_ROOT=`pwd`/configs ``
