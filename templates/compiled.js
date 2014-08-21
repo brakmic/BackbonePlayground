@@ -14,14 +14,14 @@
     var templatizer = {};
 
 
-    // body.jade compiled template
-    templatizer["body"] = function tmpl_body() {
-        return '<body><nav class="navbar navbar-default navbar-inverse"><div class="container"><div class="navbar-header"><a href="/" class="navbar-brand">Backbone Playground</a></div><ul class="nav navbar-nav"><li><a href="/">Home</a></li><li><a href="/info">Info</a></li></ul></div></nav><div id="main"><input id="searchbutton" type="button" value="Click"/></div></body>';
-    };
-
     // index.jade compiled template
     templatizer["index"] = function tmpl_index() {
         return '<!--for testing in the console--><!--another option is to load these scripts from node_modules via require()--><script src="scripts/vendor/jquery-2.1.1.js"></script><script src="scripts/vendor/underscore.js"></script><script src="scripts/vendor/backbone.js"></script><script src="scripts/vendor/bootstrap.js"></script>';
+    };
+
+    // main.jade compiled template
+    templatizer["main"] = function tmpl_main() {
+        return '<body><nav class="navbar navbar-default navbar-inverse"><div class="container"><div class="navbar-header"><a href="/" class="navbar-brand">Backbone Playground</a></div><ul class="nav navbar-nav"><li><a href="/">Home</a></li><li><a href="/info">Info</a></li></ul></div></nav><div id="main"><input id="searchbutton" type="button" value="Click"/></div></body>';
     };
 
     return templatizer;

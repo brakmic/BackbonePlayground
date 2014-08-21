@@ -10,9 +10,9 @@ module.exports = Backbone.View.extend({
         this.render();
     },
     render: function(){
-        this.$el.html(templates.body);
+        this.$el.html(templates.main);
     },
     clickReact: function(e){
-        alert('Click');
+        alert('Click on ' + e.currentTarget.id);
     }
 });
