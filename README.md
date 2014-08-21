@@ -1,28 +1,36 @@
 # Backbone Playground
 
-This app serves as a testing environment for Backbone-based WebApps.
+This app is a testing environment for Backbone-based WebApps.
 It reuses some modules from the AmpersandJS framework (getconfig, moonboots etc.)
-There's also a DOS-batch "run.bat" to start the app on a Windows system (or just `npm start` from the console).
-The DOS-script accepts a single parameter to select the environment (dev or production).
+
+To run the Playground use the appropriate run-scripts.
+
+#### Important
 All config files are located in the configs-directory.
-The GETCONFIG_ROOT must be set to the proper config-directory.
 
-
-For example:
+### Running without run-scripts
+If you're not using one of the available run-scripts you must set the GETCONFIG_ROOT manually.
 
 Windows: 
-`GETCONGIF_ROOT=%CD%\configs`
+`set GETCONGIF_ROOT=%CD%\configs`
 
 *nix bash:
-`export GETCONFIG_ROOT=`pwd`/configs`
+`` export GETCONFIG_ROOT=`pwd`/configs ``
 
-## How to run it
+### How to run it
 
 1. download/install [node.js](http://nodejs.org/)
 1. install dependencies: `npm i`
-1. run it: `npm start`
+1. run it: `run.bat` on Windows or `./run.sh` on *nix
 1. open http://localhost:3000 in a browser
 
-## License
+### Links
+
+[BackboneJS](http://backbonejs.org)
+
+[AmpersandJS](http://ampersandjs.com)
+
+
+#### License
 
 MIT
