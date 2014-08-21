@@ -21,7 +21,7 @@ Windows:
 
 1. download/install [node.js](http://nodejs.org/)
 1. install dependencies: `npm i`
-1. run it: `run.bat` or `./run.sh`
+1. run it: `run.bat` on Windows or `./run.sh` on *nix
 1. open http://localhost:3000 in a browser
 
 ## Links
