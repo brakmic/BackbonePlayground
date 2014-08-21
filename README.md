@@ -15,7 +15,7 @@ Windows:
 `GETCONGIF_ROOT=%CD%\configs`
 
 *nix bash:
-export GETCONFIG_ROOT=`pwd`/configs
+`export GETCONFIG_ROOT=`` `pwd` ``/configs`
 
 ## How to run it
 
