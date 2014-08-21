@@ -1,7 +1,7 @@
 # Backbone Playground
 
 This app is a testing environment for Backbone-based WebApps.
-It reuses some modules from the AmpersandJS framework (getconfig, moonboots etc.)
+It reuses some modules from the AmpersandJS framework (getconfig, moonboots, templatizer etc.)
 
 To run the Playground use the appropriate run-scripts.
 
