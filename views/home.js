@@ -1,5 +1,4 @@
 var templates = require('../templates/compiled');
-var domify = require('domify');
 
 module.exports = Backbone.View.extend({
     events: {
