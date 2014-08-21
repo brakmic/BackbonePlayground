@@ -1,3 +1,3 @@
-#!/bin/sh
-export GETCONFIG_ROOT=`pwd`/configs
+GETCONFIG_ROOT=`pwd`/configs
+export GETCONFIG_ROOT
 npm start

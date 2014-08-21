@@ -49,7 +49,7 @@ module.exports = {
             // js file is requested. Which means you can seamlessly change jade and
             // refresh in your browser to get new templates.
             if (config.isDev) {
-                templatizer(templatesDir, templatesCompiledDir + '/templates.js');
+                templatizer(templatesDir, templatesDir + '/compiled.js');
             }
         },
         beforeBuildCSS: function (done) {
