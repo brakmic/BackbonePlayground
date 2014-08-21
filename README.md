@@ -5,10 +5,10 @@ It reuses some modules from the AmpersandJS framework (getconfig, moonboots etc.
 
 To run the Playground use the appropriate run-scripts.
 
-## Important
+#### Important
 All config files are located in the configs-directory.
 
-## Running without run-scripts
+### Running without run-scripts
 If you're not using one of the available run-scripts you must set the GETCONFIG_ROOT manually.
 
 Windows: 
@@ -17,20 +17,20 @@ Windows:
 *nix bash:
 `` export GETCONFIG_ROOT=`pwd`/configs ``
 
-## How to run it
+### How to run it
 
 1. download/install [node.js](http://nodejs.org/)
 1. install dependencies: `npm i`
 1. run it: `run.bat` on Windows or `./run.sh` on *nix
 1. open http://localhost:3000 in a browser
 
-## Links
+### Links
 
 [BackboneJS](http://backbonejs.org)
 
 [AmpersandJS](http://ampersandjs.com)
 
 
-## License
+#### License
 
 MIT
