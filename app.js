@@ -1,26 +1,25 @@
 var stringify = require('json-stringify-safe');
 var domReady = require('domready');
 var User = require('./models/user'); //backbone test
-var HomeView = require('./views/home');
+var PlayRouter = require('./routers/playrouter');
 
 module.exports = {
     init: function(){
-
         var self = window.app = this;
-        window.app.stringify = stringify; //for easier logging of objects
-        window.app.User = User; //for testing in the console
+        self.stringify = stringify;   //for easier logging of objects
+        self.User = User;             //for testing in the console
 
         domReady(function(){
-            self.startApp();
+            console.log('Welcome to the Backbone Playground');
+            if(!self.router) {
+                self.initRouter();
+            }
         });
     },
-    startApp: function(){
-        console.log('Welcome to the Backbone Playground');
 
-        var home = new HomeView({
-            el: document.body
-        });
-
+    initRouter: function(){
+        window.app.router = new PlayRouter();
+        Backbone.history.start({ pushState: true });
     }
 };
 

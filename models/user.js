@@ -1,5 +1,5 @@
 module.exports = Backbone.Model.extend({
-    url: '/user',
+    url: '/api/users',
     defaults: {
         name: '',
         age: 0
