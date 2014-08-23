@@ -36,7 +36,7 @@
 
     // main.jade compiled template
     templatizer["main"] = function tmpl_main() {
-        return '<body><header></header><section id="main" class="backbone-app"></section></body>';
+        return '<body><header></header><section id="main" class="backbone-app"><section id="subview"></section></section></body>';
     };
 
     return templatizer;

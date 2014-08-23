@@ -3,6 +3,7 @@ var DemoView = require('../views/demo');
 var BlankView = require('../views/blank');
 
 module.exports = Backbone.Router.extend({
+    subView: null,
     routes: {
         '': 'blank',
         'home': 'blank',
@@ -10,28 +11,41 @@ module.exports = Backbone.Router.extend({
         '(*path)': 'catchAll'
     },
 
-    initialize: function() {
-        console.log('Initializing the Router.');
+    initialize: function(options) {
+        console.log('Initializing the Router');
         this.main();
     },
 
     main: function(){
-        if(!this.mainview) {
-            this.mainview = new MainView({
-                el: 'body'
+        if(!this.mainView) {
+            this.mainView = new MainView({
+                el: 'body',
+                name: 'main'
             });
+            this.mainView.render();
         }
     },
 
     demo: function(){
-        new DemoView({ el: 'section#main' });
+        this.switchView(new DemoView({ el: 'section#subview', name: 'demo' }));
     },
 
     blank: function(){
-        new BlankView({ el: 'section#main' });
+        this.switchView(new BlankView({ el: 'section#subview', name: 'blank' }));
     },
 
     catchAll: function () {
         this.blank();
+    },
+
+    switchView: function(view){
+        if(this.subView){
+            console.log('Unbinding & removing view: ' + app.stringify(this.subView.name));
+            this.subView.remove().unbind();
+        }
+        this.mainView.$el.append(view.el);
+        this.subView = view;
+        this.subView.render();
+
     }
 });

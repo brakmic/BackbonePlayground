@@ -1,18 +1,15 @@
+var BaseView = require('./base');
 var templates = require('../templates/compiled');
 
-module.exports = Backbone.View.extend({
+module.exports = BaseView.extend({
 
     events: {
       'click a': 'navigate'
     },
 
-    initialize: function () {
-        this.render();
-        console.log('Initializing Headers');
-    },
-
     render: function () {
         this.$el.html(templates.header);
+        return this;
     },
 
     navigate: function (event) {
