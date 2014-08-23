@@ -20,6 +20,14 @@ var poopPlugin = {
                     plugin: require('poop')
                  };
 
+server.route({
+   method: 'GET',
+    path: '/favicon.ico',
+    handler: function(request, reply){
+        reply.file('favicon.ico');
+    }
+});
+
 
 // set clientconfig cookie
 internals.configStateConfig = {

@@ -1,17 +1,26 @@
 module.exports = Backbone.Model.extend({
     url: '/api/users',
     defaults: {
-        name: '',
-        age: 0
-    },
+        firstName: 'Harris',
+        lastName: 'Brakmic',
+        email: 'brakmic@gmail.com',
+        homepage: 'brakmic.de'
+    }
+    /*,
     validate: function(attrs){
         var errors = [];
-        if(attrs.age < 0){
-            errors.push({name: 'user', message: 'Age must be >= 0'});
+        if(!attrs.firstName){
+            errors.push({name: 'user', message: 'First name can\#t be empty'});
         }
-        if(attrs.name === ''){
-            errors.push({name: 'user', message: 'Name can\'t be empty'});
+        if(!attrs.lastName){
+            errors.push({name: 'user', message: 'Last name can\'t be empty'});
+        }
+        if(!attrs.email){
+            errors.push({name: 'user', message: 'E-Mail can\'t be empty'});
+        }
+        if(!attrs.homepage){
+            errors.push({name: 'user', message: 'Homepage can\'t be empty'});
         }
         return errors.length > 0 ? errors : false;
-    }
+    }*/
 });

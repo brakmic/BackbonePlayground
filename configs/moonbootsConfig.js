@@ -37,11 +37,12 @@ module.exports = {
             vendorScripts + 'underscore.js',
             vendorScripts + 'underscore.string.js',
             vendorScripts + 'bootstrap.js',
-            vendorScripts + 'backbone.js'
+            vendorScripts + 'backbone.js',
+            vendorScripts + 'backbone.stickit.js'
         ],
         // Specify the stylesheets we want to bundle
         stylesheets: [
-            cssDir + '/bootstrap.min.css',
+            cssDir + '/bootstrap.spacelab.min.css',
             cssDir + '/app.css'
         ],
         beforeBuildJS: function () {

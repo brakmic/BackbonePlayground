@@ -14,7 +14,7 @@
     var templatizer = {};
     templatizer["attic"] = {};
 
-    // attic\index.jade compiled template
+    // attic/index.jade compiled template
     templatizer["attic"]["index"] = function tmpl_attic_index() {
         return '<!--for testing in the console--><!--another option is to load these scripts from node_modules via require()--><script src="scripts/vendor/jquery-2.1.1.js"></script><script src="scripts/vendor/underscore.js"></script><script src="scripts/vendor/backbone.js"></script><script src="scripts/vendor/bootstrap.js"></script>';
     };
@@ -26,17 +26,42 @@
 
     // demo.jade compiled template
     templatizer["demo"] = function tmpl_demo() {
-        return '<div class="container demo"><div class="row"><div class="col-lg-4"><span>This is the DEMO view</span></div></div></div>';
+        return '<div class="container demo"><div class="row"><div class="col-lg-4"><span>This is a DEMO view</span></div></div></div>';
+    };
+
+    // edit.jade compiled template
+    templatizer["edit"] = function tmpl_edit() {
+        return '<div class="edit"><h2>Edit</h2><ul class="list-group list-unstyled"><li><label for="firstName"><input name="firstName" type="text" class="edit firstName"/></label></li><li><label for="lastName"><input name="lastName" type="text" class="edit lastName"/></label></li><li><label for="email"><input name="email" type="text" class="edit email"/></label></li><li><label for="homepage"><input name="homepage" type="text" class="edit homepage"/></label></li></ul></div>';
     };
 
     // header.jade compiled template
     templatizer["header"] = function tmpl_header() {
-        return '<nav class="navbar navbar-default navbar-inverse"><div class="container"><div class="navbar-header"><a href="/" class="navbar-brand">Backbone Playground</a></div><ul class="nav navbar-nav"><li><a href="/">Home</a></li><li><a href="/demo">Demo</a></li></ul></div></nav>';
+        return '<nav class="navbar navbar-default navbar-inverse"><div class="container"><div class="navbar-header"><a href="/" class="navbar-brand">Backbone Playground</a></div><ul class="nav navbar-nav"><li><a href="/">Home</a></li><li><a href="/demo">Demo</a></li><li><a href="/twoway">TwoWay</a></li></ul></div></nav>';
+    };
+
+    // htmlhead.jade compiled template
+    templatizer["htmlhead"] = function tmpl_htmlhead() {
+        return '<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0"/><meta name="apple-mobile-web-app-capable" content="yes"/>';
+    };
+
+    // index.jade compiled template
+    templatizer["index"] = function tmpl_index() {
+        return '<!--for testing in the console--><!--another option is to load these scripts from node_modules via require()--><script src="scripts/vendor/jquery-2.1.1.js"></script><script src="scripts/vendor/underscore.js"></script><script src="scripts/vendor/backbone.js"></script><script src="scripts/vendor/bootstrap.js"></script>';
     };
 
     // main.jade compiled template
     templatizer["main"] = function tmpl_main() {
         return '<body><header></header><section id="main" class="backbone-app"><section id="subview"></section></section></body>';
+    };
+
+    // preview.jade compiled template
+    templatizer["preview"] = function tmpl_preview() {
+        return '<div class="preview"><h3>Preview</h3><hr/><div class="preview firstName"></div><div class="preview lastName"></div><div class="preview email"></div><a href="http://www.web.de" target="_blank" class="preview homepage"></a></div>';
+    };
+
+    // twoway.jade compiled template
+    templatizer["twoway"] = function tmpl_twoway() {
+        return '<div class="container twoway"><div class="col-xs-6 col-sm-3 useredit"></div><!--.col-xs-6.col-sm-3.emptycolumn--><div class="col-xs-6 col-sm-3 userpreview"></div></div>';
     };
 
     return templatizer;

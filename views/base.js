@@ -3,6 +3,8 @@ module.exports = Backbone.View.extend({
         name: 'unknown',
         initialize: function(options){
             this.name = options.name;
-            console.log('Initialize view: ' + this.name);
+            if(this.name) {
+                console.log('Initialize view: ' + this.name);
+            }
         }
 });

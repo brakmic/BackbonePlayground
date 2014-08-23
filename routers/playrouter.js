@@ -1,6 +1,7 @@
 var MainView = require('../views/main');
 var DemoView = require('../views/demo');
 var BlankView = require('../views/blank');
+var TwoWayView = require('../views/twoway');
 
 module.exports = Backbone.Router.extend({
     subView: null,
@@ -8,6 +9,7 @@ module.exports = Backbone.Router.extend({
         '': 'blank',
         'home': 'blank',
         'demo': 'demo',
+        'twoway': 'twoway',
         '(*path)': 'catchAll'
     },
 
@@ -34,14 +36,18 @@ module.exports = Backbone.Router.extend({
         this.switchView(new BlankView({ el: 'section#subview', name: 'blank' }));
     },
 
+    twoway: function(){
+        this.switchView(new TwoWayView({ el: 'section#subview', name: 'twoway' }));
+    },
+
     catchAll: function () {
         this.blank();
     },
 
     switchView: function(view){
         if(this.subView){
-            console.log('Unbinding & removing view: ' + app.stringify(this.subView.name));
-            this.subView.remove().unbind();
+            console.log('Unbinding & removing view: ' + this.subView.name);
+            this.subView.remove();
         }
         this.mainView.$el.append(view.el);
         this.subView = view;
