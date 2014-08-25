@@ -20,12 +20,12 @@ module.exports = BaseView.extend({
         var protocol = e.currentTarget.protocol + '//';
 
         if (href.slice(protocol.length) !== protocol) {
-            e.preventDefault();
+            if ($(e.currentTarget).closest("#sidebar").length ) {
+                e.preventDefault();
+                $('.active-menu').removeClass('active-menu');
+                $(e.currentTarget).addClass('active-menu');
+            }
             Backbone.history.navigate(href, true);
-
-            $('ul.nav a.active-menu').removeClass('active-menu');
-            $(e.currentTarget).addClass('active-menu');
-
         }
     }
 });
