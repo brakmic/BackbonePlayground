@@ -16,6 +16,8 @@ Two mock APIs based on [hapi-dummy-api](https://github.com/HenrikJoreteg/hapi-du
 
 A nice design based on a free template from [redefineIT](http://redefineinfotech.com/5-free-bootstrap-html-templates/)
 
+Icons & Fonts from [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
+
 ...more to come soon ;)
 
 ### Running without run-scripts
