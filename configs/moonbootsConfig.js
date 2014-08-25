@@ -47,7 +47,7 @@ module.exports = {
             cssDir + 'bootstrap.dist.css',
             cssDir + 'font-awesome.min.css',
             cssDir + 'custom.css',
-            cssDir + 'app.css',
+            cssDir + 'app.css'
         ],
         beforeBuildJS: function () {
             // This re-builds our template files from jade each time the app's main
