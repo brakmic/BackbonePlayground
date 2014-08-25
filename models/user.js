@@ -5,8 +5,8 @@ module.exports = Backbone.Model.extend({
         lastName: 'Brakmic',
         email: 'brakmic@gmail.com',
         homepage: 'brakmic.de'
-    }
-    /*,
+    },
+
     validate: function(attrs){
         var errors = [];
         if(!attrs.firstName){
@@ -22,5 +22,5 @@ module.exports = Backbone.Model.extend({
             errors.push({name: 'user', message: 'Homepage can\'t be empty'});
         }
         return errors.length > 0 ? errors : false;
-    }*/
+    }
 });

@@ -29,7 +29,7 @@ module.exports = new API({
     ],
     rootUrl: '/api/users',
     idProperty: 'id',
-    delay: 0,
+    delay: 3000,
     name: 'fake-users-api',
     version: '0.0.1'
 });
