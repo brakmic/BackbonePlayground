@@ -12,6 +12,46 @@ body
 
   html,body {
     height:100%;
+    position: relative;
+    padding-top: 40px;
+    font-family: Calibri;
+  }
+
+  .sidebar-nav-fixed {
+    position:fixed;
+    top:60px;
+    width:250px;
+
+  }
+
+  .sidebar-collapse {
+    /* Adds shadow */
+    box-shadow: 0 0 5px 4px rgba(0,0,0,0.2);
+    border: 1px rgba(0,0,0,0.1) solid;
+  }
+
+  #subview {
+    padding-top: 70px;
+  }
+
+  .navbar-top-fixed {
+    position:fixed;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    /* Adds shadow to the bottom of the bar */
+    -webkit-box-shadow: 0px 0px 8px 0px #000000;
+    -moz-box-shadow: 0px 0px 8px 0px #000000;
+    box-shadow: 0px 0px 8px 0px #000000;
+    /* Adds the transparent background */
+    background-color: rgba(1, 1, 1, 0.8);
+    color: rgba(1, 1, 1, 0.8);
+  }
+
+  .customer.picture {
+    max-height: 100px;
+    max-width: 100px;
   }
 
   .center {
@@ -24,6 +64,12 @@ body
     font-family: 'Antic Slab', serif;
     font-size:80px;
     color:#DDCCEE;
+  }
+
+  .welcome {
+    color: #285e8e;
+    text-shadow: 1px 1px 1px #ccc;
+    font-size: 1.5em;
   }
 
   .lead {

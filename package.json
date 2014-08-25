@@ -32,5 +32,9 @@
     "templatizer": "^1.0.0",
     "underscore": "^1.6.0",
     "underscore.string": "^2.3.3"
+  },
+  "devDependencies": {
+    "canned": "^0.2.3",
+    "hapi-dummy-api": "^0.2.0"
   }
 }

@@ -5,7 +5,7 @@ var Header = require('./header');
 module.exports = BaseView.extend({
 
     events: {
-        'click input[type=button]': 'clickReact'
+        'click a': "clicked"
     },
 
     render: function(){
@@ -15,7 +15,17 @@ module.exports = BaseView.extend({
         return this;
     },
 
-    clickReact: function(e){
-        alert('Click on ' + e.currentTarget.id);
+    clicked: function(e){
+        var href = $(e.currentTarget).attr('href');
+        var protocol = e.currentTarget.protocol + '//';
+
+        if (href.slice(protocol.length) !== protocol) {
+            e.preventDefault();
+            Backbone.history.navigate(href, true);
+
+            $('ul.nav a.active-menu').removeClass('active-menu');
+            $(e.currentTarget).addClass('active-menu');
+
+        }
     }
 });

@@ -3,6 +3,9 @@ var config = require('getconfig');
 var server = new Hapi.Server('localhost', config.http.port);
 var moonbootsConfig = require(config.root + '/moonbootsConfig');
 var goodConfig = require(config.root + '/goodConfig');
+var customersAPI = require(config.root + '/customersAPI');
+var usersAPI = require(config.root + '/usersAPI');
+
 var serverName = 'Backbone Playground';
 var internals = {};
 
@@ -21,7 +24,40 @@ var poopPlugin = {
                  };
 
 server.route({
-   method: 'GET',
+    method: 'GET',
+    path: '/public/css/{param*}',
+    handler:{
+        directory: {
+            path: 'public/css/',
+            listing: false
+        }
+    }
+});
+
+server.route({
+    method: 'GET',
+    path: '/assets/img/{param*}',
+    handler:{
+        directory: {
+            path: 'public/css/binary/',
+            listing: false
+        }
+    }
+});
+
+server.route({
+    method: 'GET',
+    path: '/fonts/{param*}',
+    handler:{
+        directory: {
+            path: 'public/fonts/',
+            listing: false
+        }
+    }
+});
+
+server.route({
+    method: 'GET',
     path: '/favicon.ico',
     handler: function(request, reply){
         reply.file('favicon.ico');
@@ -46,7 +82,7 @@ server.ext('onPreResponse', function(request, reply) {
         return reply();
     }
 });
-server.pack.register([ moonbootsPlugin, goodPlugin, poopPlugin ], function(err){
+server.pack.register([ moonbootsPlugin, goodPlugin, poopPlugin, customersAPI, usersAPI ], function(err){
     if(err) throw err;
     // If everything loaded correctly, start the server:
     server.start(function (err) {

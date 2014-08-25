@@ -1,4 +1,58 @@
 body
-    header
-    section#main.backbone-app
+    div.app
+
+        div.wrapper
+            div.navigation-top.navbar-top-fixed
+                nav.navbar.navbar-default.navbar-cls-top(role='navigation', style='margin-bottom:0')
+                    div.navbar-header
+                        button.navbar-toggle(type="button", data-toggle="collapse", data-target=".sidebar-collapse")
+                            span.sr-only Toggle navigation
+                            span.icon-bar
+                            span.icon-bar
+                            span.icon-bar
+                        a.navbar-brand(href='/')
+                            i Playground
+                    div(style="color: blue;padding: 15px 50px 5px 50px;float: right;font-size: 16px;") Last access : 30 May 2014 &nbsp;
+                        a.btn.btn-danger.square-btn-adjust(href='#') Logout
+            div.navigation-left.sidebar-nav-fixed
+                nav.navbar-default.navbar-side(role="navigation")
+                    div.sidebar-collapse
+                        ul.nav.list-group.backbone-playground.sidebar-menu(id='sidebar')
+                            li.text-center
+                                img.user-image.img-responsive(src='/public/css/images/backbone_logo.png')
+                            li
+                                a.active-menu(href='/home')
+                                    i.fa.fa-home.fa-lg &nbsp&nbspHome
+                            li
+                                a(href="/twoway")
+                                    i.fa.fa-desktop.fa-lg &nbsp&nbspTwo-Way Data Binding
+                            li
+                                a(href="/customers")
+                                    i.fa.fa-qrcode.fa-lg &nbsp&nbspREST-API
+                            li
+                                a(href="/")
+                                    i.fa.fa-bar-chart-o.fa-lg &nbsp&nbspStatistics
+                            li
+                                a(href="/")
+                                    i.fa.fa-table.fa-lg &nbsp&nbspTables
+                            li
+                                a(href="/")
+                                    i.fa.fa-edit.fa-lg &nbsp&nbspForms
+                            li
+                              a(href="/")
+                                i.fa.fa-sitemap.fa-lg Dropdown Demo
+                                span.fa.arrow
+                                ul.nav.nav-second-level(id='dropdown-menu')
+                                   li
+                                     a(href="/") Second Level Link
+                                   li
+                                     a(href="/") Second Level Link
+                            li
+                                a(href="/")
+                                    i.fa.fa-square-o.fa-lg &nbsp&nbspBlank Page
+
         section#subview
+
+        //header
+
+

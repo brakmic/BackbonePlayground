@@ -1,14 +1,15 @@
 var MainView = require('../views/main');
-var DemoView = require('../views/demo');
 var BlankView = require('../views/blank');
 var TwoWayView = require('../views/twoway');
+var CustomersListView = require('../views/customerlist');
+var Customers = require('../collections/customers');
 
 module.exports = Backbone.Router.extend({
     subView: null,
     routes: {
         '': 'blank',
         'home': 'blank',
-        'demo': 'demo',
+        'customers': 'customers',
         'twoway': 'twoway',
         '(*path)': 'catchAll'
     },
@@ -28,20 +29,20 @@ module.exports = Backbone.Router.extend({
         }
     },
 
-    demo: function(){
-        this.switchView(new DemoView({ el: 'section#subview', name: 'demo' }));
+    customers: function(){
+        this.switchView(new CustomersListView({ collection: new Customers(), el: '#subview', name: 'cslistview' }));
     },
 
     blank: function(){
-        this.switchView(new BlankView({ el: 'section#subview', name: 'blank' }));
+        this.switchView(new BlankView({ el: '#subview', name: 'blank' }));
     },
 
     twoway: function(){
-        this.switchView(new TwoWayView({ el: 'section#subview', name: 'twoway' }));
+        this.switchView(new TwoWayView({ el: '#subview', name: 'twoway' }));
     },
 
     catchAll: function () {
-        this.blank();
+        //this.blank();
     },
 
     switchView: function(view){

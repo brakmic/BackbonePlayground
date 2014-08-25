@@ -17,7 +17,6 @@ module.exports = BaseView.extend({
 
    render: function(){
        this.$el.html(templates.twoway);
-
        //set up the editor view
        this.editView = new EditView({ model: app.user, el: '.useredit', name: 'edit'});
        this.editView.render();

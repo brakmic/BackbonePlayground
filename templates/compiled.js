@@ -13,20 +13,21 @@
 
     var templatizer = {};
     templatizer["attic"] = {};
+    templatizer["includes"] = {};
 
-    // attic/index.jade compiled template
+    // attic\index.jade compiled template
     templatizer["attic"]["index"] = function tmpl_attic_index() {
         return '<!--for testing in the console--><!--another option is to load these scripts from node_modules via require()--><script src="scripts/vendor/jquery-2.1.1.js"></script><script src="scripts/vendor/underscore.js"></script><script src="scripts/vendor/backbone.js"></script><script src="scripts/vendor/bootstrap.js"></script>';
     };
 
     // blank.jade compiled template
     templatizer["blank"] = function tmpl_blank() {
-        return '<div class="container blank"><div class="row"><div class="col-lg-4"><span> <<< BLANK VIEW >>></span></div></div></div>';
+        return '<div class="container blank"><div class="row"><div class="col-lg-4"></div><div class="col-lg-6"><span class="welcome"> Welcome to the Backbone Playground!</span></div></div></div>';
     };
 
-    // demo.jade compiled template
-    templatizer["demo"] = function tmpl_demo() {
-        return '<div class="container demo"><div class="row"><div class="col-lg-4"><span>This is a DEMO view</span></div></div></div>';
+    // customerlist.jade compiled template
+    templatizer["customerlist"] = function tmpl_customerlist() {
+        return '<section class="clist"><div class="container"><div class="row"><div class="col-sm-6 col-md-4"></div><div class="col-sm-6 col-md-4"><h3>Customers</h3><ul id="thelist" class="customerlist list-group list-unstyled"></ul></div></div></div></section>';
     };
 
     // edit.jade compiled template
@@ -36,22 +37,22 @@
 
     // header.jade compiled template
     templatizer["header"] = function tmpl_header() {
-        return '<nav class="navbar navbar-default navbar-inverse"><div class="container"><div class="navbar-header"><a href="/" class="navbar-brand">Backbone Playground</a></div><ul class="nav navbar-nav"><li><a href="/">Home</a></li><li><a href="/demo">Demo</a></li><li><a href="/twoway">TwoWay</a></li></ul></div></nav>';
+        return '<nav class="navbar navbar-default navbar-inverse"><div class="container"><div class="navbar-header"><a href="/" class="navbar-brand">Backbone Playground</a></div><ul class="nav navbar-nav"><li><a href="/">Home</a></li><li><a href="/customers">Customers</a></li><li><a href="/twoway">TwoWay</a></li></ul></div></nav>';
     };
 
     // htmlhead.jade compiled template
     templatizer["htmlhead"] = function tmpl_htmlhead() {
-        return '<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0"/><meta name="apple-mobile-web-app-capable" content="yes"/>';
+        return '<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0"/><meta name="apple-mobile-web-app-capable" content="yes"/><title>Backbone Playground</title><!--link(href=\'http://fonts.googleapis.com/css?family=Open+Sans\', rel=\'stylesheet\', type=\'text/css\')-->';
     };
 
-    // index.jade compiled template
-    templatizer["index"] = function tmpl_index() {
-        return '<!--for testing in the console--><!--another option is to load these scripts from node_modules via require()--><script src="scripts/vendor/jquery-2.1.1.js"></script><script src="scripts/vendor/underscore.js"></script><script src="scripts/vendor/backbone.js"></script><script src="scripts/vendor/bootstrap.js"></script>';
+    // includes\customer.jade compiled template
+    templatizer["includes"]["customer"] = function tmpl_includes_customer() {
+        return '<div class="customer"><img src="http://robohash.org/test" class="customer picture"/><div><label for="firstName">First name:&nbsp&nbsp<span class="customer firstName"></span></label></div><div><label for="lastName">Last name:&nbsp&nbsp<span class="customer lastName"></span></label></div><div><label for="email">E-Mail:&nbsp&nbsp<span class="customer email"></span></label></div><div><label for="phone">Phone:&nbsp&nbsp<span class="customer phone"></span></label></div><div><label for="city">City:&nbsp&nbsp<span class="customer city"></span></label></div></div>';
     };
 
     // main.jade compiled template
     templatizer["main"] = function tmpl_main() {
-        return '<body><header></header><section id="main" class="backbone-app"><section id="subview"></section></section></body>';
+        return '<body><div class="app"><div class="wrapper"><div class="navigation-top navbar-top-fixed"><nav role="navigation" style="margin-bottom:0" class="navbar navbar-default navbar-cls-top"><div class="navbar-header"><button type="button" data-toggle="collapse" data-target=".sidebar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="navbar-brand"><i>Playground</i></a></div><div style="color: blue;padding: 15px 50px 5px 50px;float: right;font-size: 16px;">Last access : 30 May 2014 &nbsp;<a href="#" class="btn btn-danger square-btn-adjust">Logout</a></div></nav></div><div class="navigation-left sidebar-nav-fixed"><nav role="navigation" class="navbar-default navbar-side"><div class="sidebar-collapse"><ul id="sidebar" class="nav list-group backbone-playground sidebar-menu"><li class="text-center"><img src="/public/css/images/backbone_logo.png" class="user-image img-responsive"/></li><li><a href="/home" class="active-menu"><i class="fa fa-home fa-lg">&nbsp&nbspHome</i></a></li><li><a href="/twoway"><i class="fa fa-desktop fa-lg">&nbsp&nbspTwo-Way Data Binding</i></a></li><li><a href="/customers"><i class="fa fa-qrcode fa-lg">&nbsp&nbspREST-API</i></a></li><li><a href="/"><i class="fa fa-bar-chart-o fa-lg">&nbsp&nbspStatistics</i></a></li><li><a href="/"><i class="fa fa-table fa-lg">&nbsp&nbspTables</i></a></li><li><a href="/"><i class="fa fa-edit fa-lg">&nbsp&nbspForms</i></a></li><li><a href="/"><i class="fa fa-sitemap fa-lg">Dropdown Demo</i><span class="fa arrow"></span><ul id="dropdown-menu" class="nav nav-second-level"><li><a href="/">Second Level Link</a></li><li><a href="/">Second Level Link</a></li></ul></a></li><li><a href="/"><i class="fa fa-square-o fa-lg">&nbsp&nbspBlank Page</i></a></li></ul></div></nav></div></div><section id="subview"></section><!--header-->\n</div></body>';
     };
 
     // preview.jade compiled template
@@ -61,7 +62,7 @@
 
     // twoway.jade compiled template
     templatizer["twoway"] = function tmpl_twoway() {
-        return '<div class="container twoway"><div class="col-xs-6 col-sm-3 useredit"></div><!--.col-xs-6.col-sm-3.emptycolumn--><div class="col-xs-6 col-sm-3 userpreview"></div></div>';
+        return '<div class="container twoway"><div class="col-xs-6 col-sm-3 emptycolumn"></div><div class="col-xs-6 col-sm-3 useredit"></div><!--.col-xs-6.col-sm-3.emptycolumn--><div class="col-xs-6 col-sm-3 userpreview"></div></div>';
     };
 
     return templatizer;

@@ -6,8 +6,9 @@ var templatizer = require('templatizer');
 
 // helper vars
 var appDir = path.resolve(__dirname + '/../');
-var cssDir = appDir + '/public/css';
-var vendorScripts = appDir + '/scripts/vendor/';
+var cssDir = appDir + '/public/css/';
+var scriptsDir = appDir + '/scripts/';
+var vendorScripts = scriptsDir + '/vendor/';
 var templatesDir = appDir + '/' + config.templates.rootDir;
 var templatesCompiledDir = appDir + '/' + config.templates.compiledDir;
 
@@ -38,12 +39,15 @@ module.exports = {
             vendorScripts + 'underscore.string.js',
             vendorScripts + 'bootstrap.js',
             vendorScripts + 'backbone.js',
-            vendorScripts + 'backbone.stickit.js'
+            vendorScripts + 'backbone.stickit.js',
+            scriptsDir    + 'custom.js'
         ],
         // Specify the stylesheets we want to bundle
         stylesheets: [
-            cssDir + '/bootstrap.spacelab.min.css',
-            cssDir + '/app.css'
+            cssDir + 'bootstrap.dist.css',
+            cssDir + 'font-awesome.min.css',
+            cssDir + 'custom.css',
+            cssDir + 'app.css',
         ],
         beforeBuildJS: function () {
             // This re-builds our template files from jade each time the app's main
