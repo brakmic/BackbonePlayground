@@ -30,6 +30,11 @@
         return '<section class="clist"><div class="container"><div class="row"><div class="col-sm-6 col-md-4"></div><div class="col-sm-6 col-md-4"><h3>Customers</h3><ul id="thelist" class="customerlist list-group list-unstyled"></ul></div></div></div></section>';
     };
 
+    // demo.jade compiled template
+    templatizer["demo"] = function tmpl_demo() {
+        return '<div class="container demo"><div class="row"><div class="col-lg-4"><span>This is a DEMO view</span></div></div></div>';
+    };
+
     // edit.jade compiled template
     templatizer["edit"] = function tmpl_edit() {
         return '<div class="edit"><h2>Edit</h2><ul class="list-group list-unstyled"><li><label for="firstName"><input name="firstName" type="text" class="edit firstName"/></label></li><li><label for="lastName"><input name="lastName" type="text" class="edit lastName"/></label></li><li><label for="email"><input name="email" type="text" class="edit email"/></label></li><li><label for="homepage"><input name="homepage" type="text" class="edit homepage"/></label></li></ul></div>';
@@ -48,6 +53,11 @@
     // includes\customer.jade compiled template
     templatizer["includes"]["customer"] = function tmpl_includes_customer() {
         return '<div class="customer"><img src="http://robohash.org/test" class="customer picture"/><div><label for="firstName">First name:&nbsp&nbsp<span class="customer firstName"></span></label></div><div><label for="lastName">Last name:&nbsp&nbsp<span class="customer lastName"></span></label></div><div><label for="email">E-Mail:&nbsp&nbsp<span class="customer email"></span></label></div><div><label for="phone">Phone:&nbsp&nbsp<span class="customer phone"></span></label></div><div><label for="city">City:&nbsp&nbsp<span class="customer city"></span></label></div></div>';
+    };
+
+    // index.jade compiled template
+    templatizer["index"] = function tmpl_index() {
+        return '<!--for testing in the console--><!--another option is to load these scripts from node_modules via require()--><script src="scripts/vendor/jquery-2.1.1.js"></script><script src="scripts/vendor/underscore.js"></script><script src="scripts/vendor/backbone.js"></script><script src="scripts/vendor/bootstrap.js"></script>';
     };
 
     // main.jade compiled template

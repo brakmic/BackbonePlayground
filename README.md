@@ -8,6 +8,16 @@ To run the Playground use the appropriate run-scripts.
 #### Important
 All config files are located in the configs-directory.
 
+#### Elements
+
+Two-Way data binding with [Backbone.Stickit](http://nytimes.github.io/backbone.stickit/)
+
+Two mock APIs based on [hapi-dummy-api](https://github.com/HenrikJoreteg/hapi-dummy-api)
+
+A nice design based on a free template from [redefineIT](http://redefineinfotech.com/5-free-bootstrap-html-templates/)
+
+...more to come soon ;)
+
 ### Running without run-scripts
 If you're not using one of the available run-scripts you must set the GETCONFIG_ROOT manually.
 
