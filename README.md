@@ -2,6 +2,7 @@
 
 This app is a testing environment for Backbone-based WebApps.
 It reuses some modules from the AmpersandJS framework (getconfig, moonboots, templatizer etc.)
+There's also a complete MarionetteJS framework included (as a separate JS + Marionette.Wreqr and Marionette.Babysitter packages).
 
 To run the Playground use the appropriate run-scripts.
 
@@ -43,6 +44,8 @@ Windows:
 [BackboneJS](http://backbonejs.org)
 
 [AmpersandJS](http://ampersandjs.com)
+
+[MarionetteJS](http://marionettejs.com)
 
 
 #### License
