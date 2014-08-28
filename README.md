@@ -15,6 +15,8 @@ Two-Way data binding with [Backbone.Stickit](http://nytimes.github.io/backbone.s
 
 Two mock APIs based on [hapi-dummy-api](https://github.com/HenrikJoreteg/hapi-dummy-api)
 
+Runs on [HAPI-Server](http://hapijs.com)
+
 A nice design based on a free template from [redefineIT](http://redefineinfotech.com/5-free-bootstrap-html-templates/)
 
 ![Backbone Playground](http://v55.imgup.net/playground5e1e.png "Screenshot")
