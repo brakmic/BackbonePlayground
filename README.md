@@ -6,9 +6,6 @@ There's also a complete MarionetteJS framework included (as a separate JS + Back
 
 To run the Playground use the appropriate run-scripts.
 
-#### Important
-All config files are located in the configs-directory.
-
 #### Elements
 
 Two-Way data binding with [Backbone.Stickit](http://nytimes.github.io/backbone.stickit/)
