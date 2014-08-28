@@ -39,6 +39,9 @@ module.exports = {
             vendorScripts + 'underscore.string.js',
             vendorScripts + 'bootstrap.js',
             vendorScripts + 'backbone.js',
+            vendorScripts + 'backbone.wreqr.js',
+            vendorScripts + 'backbone.babysitter.js',
+            vendorScripts + 'backbone.marionette.js',
             vendorScripts + 'backbone.stickit.js',
             scriptsDir    + 'custom.js'
         ],

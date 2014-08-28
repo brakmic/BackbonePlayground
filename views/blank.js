@@ -1,10 +1,14 @@
 var BaseView = require('./base');
 var templates = require('../templates/compiled');
 
-module.exports = BaseView.extend({
+module.exports = Backbone.Marionette.ItemView.extend({
 
-    render: function(){
+    template: templates.blank
+
+    /*MarionetteJS provides a render() function
+    -------------------------------------------*/
+    /*render: function(){
         this.$el.html(templates.blank);
         return this;
-    }
+    }*/
 });
