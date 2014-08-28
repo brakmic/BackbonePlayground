@@ -42,7 +42,7 @@ module.exports = Backbone.Router.extend({
     },
 
     catchAll: function () {
-        //this.blank();
+        this.blank();
     },
 
     switchView: function(view){
