@@ -22,6 +22,7 @@ module.exports = {
             if(!self.router) {
                 self.initRouter();
             }
+            //for debugging only
             if(!self.marionette) {
                 //an "embedded" MarionetteJS app for testing
                 self.marionette = new MarionetteApp({});
