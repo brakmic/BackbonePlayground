@@ -22,6 +22,14 @@ Icons & Fonts from [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
 
 ...more to come soon ;)
 
+#### MarionetteJS
+
+> When the app starts an 'embedded' MarionetteJS instance gets created and spits out a very basic ItemView. 
+The __m_app.js__ script in the root folder contains some basic examples about Regions, Views and Layouts.
+MarionetteJS templates are under __templates/marionette__ folder. The current router implementation __playrouter.js__
+doesn't control MarionetteJS views. Future Playground versions will contain a separate 'subsystem'
+dedicated solely to MarionetteJS.
+
 ### Running without run-scripts
 If you're not using one of the available run-scripts you must set the GETCONFIG_ROOT manually.
 
