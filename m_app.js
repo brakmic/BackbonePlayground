@@ -3,7 +3,6 @@ var MarionetteItemView = require('./views/marionette/m_main_view');
 
 function MarionetteModule(options){
     //**TODO**
-    //Currently just an empty wrapper
 }
 
 MarionetteModule.prototype.start = function() {
