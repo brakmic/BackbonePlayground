@@ -1,4 +1,5 @@
 var stringify = require('json-stringify-safe');
+var _ = require('underscore');
 var domify = require('domify');
 var templates = require('./templates/compiled');
 var domReady = require('domready');
@@ -26,31 +27,32 @@ module.exports = {
     },
 
     initApp: function(){
-        window.app = new Marionette.Application();
+
+        var App = window.app = new Marionette.Application();
         //add App region
         window.app.addInitializer(function(){
-            window.app.addRegions({
+            App.addRegions({
                 main: '#app'
             });
         });
         //add router
-        window.app.addInitializer(function(){
+        App.addInitializer(function(){
             //currently without an explicit Marionette-Controller
-            window.app.Router = new PlayRouter();
+            App.Router = new PlayRouter();
         });
         //add layout and base regions (header, sidebar, main)
-        window.app.addInitializer(function(){
+        App.addInitializer(function(){
             window.playground.initLayout();
         });
         //start backbone history
-        window.app.on("start", function(){
+        App.on("start", function(){
             if (Backbone.history){
                 Backbone.history.start({pushState: true});
                 console.log('Backbone.History started.');
             }
         });
         //start marionette
-        window.app.start();
+        App.start();
     },
     initLayout: function(){
         var layout = new MainLayout();
