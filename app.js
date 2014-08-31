@@ -54,11 +54,12 @@ module.exports = {
     },
     initLayout: function(){
         var layout = new MainLayout();
-        window.app.main.show(layout);
-
-        layout.headerRegion.show(new HeaderView());
-        layout.sidebarRegion.show(new SidebarView());
-        layout.mainRegion.show(new MainView());
+        layout.on('show', function(){
+            this.headerRegion.show(new HeaderView());
+            this.sidebarRegion.show(new SidebarView());
+            this.mainRegion.show(new MainView());
+        });
+        app.main.show(layout);
     }
 };
 
