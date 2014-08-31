@@ -1,8 +1,7 @@
 # Backbone Playground
 
-This is a testing environment for Backbone-based WebApps.
-It reuses some modules from the AmpersandJS framework (getconfig, moonboots, templatizer etc.)
-There's also a complete MarionetteJS framework included (as a separate JS + Backbone.Wreqr & Backbone.Babysitter packages).
+This is a testing environment for Backbone-based WebApps. It is based on MarionetteJS.
+It also reuses some modules from the AmpersandJS framework (getconfig, moonboots, templatizer etc.)
 
 To run the Playground use the appropriate run-scripts.
 
