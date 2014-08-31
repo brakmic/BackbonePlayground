@@ -31,7 +31,7 @@ dedicated solely to MarionetteJS.
 
 #### MarionetteJS console debugging
 
-The Marionette.Application is located under `window.app`.
+The Marionette.Application is located under `window.app` 
 
 ![MarionetteJS Console](http://t88.imgup.net/marionette5d70.png "MarionetteJS")
 
