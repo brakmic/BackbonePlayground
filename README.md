@@ -11,6 +11,8 @@ Two-Way data binding with [Backbone.Stickit](http://nytimes.github.io/backbone.s
 
 Two mock APIs based on [hapi-dummy-api](https://github.com/HenrikJoreteg/hapi-dummy-api)
 
+[Backbone.Radio](https://github.com/jmeas/backbone.radio) to build decoupled applications.
+
 Runs on [HAPI-Server](http://hapijs.com)
 
 A nice design based on a free template from [redefineIT](http://redefineinfotech.com/5-free-bootstrap-html-templates/)
