@@ -31,7 +31,9 @@ dedicated solely to MarionetteJS.
 
 #### MarionetteJS console debugging
 
-![MarionetteJS Console](http://x86.imgup.net/marionettedfcd.png "MarionetteJS")
+The Marionette.Application is located under `window.app`.
+
+![MarionetteJS Console](http://t88.imgup.net/marionette5d70.png "MarionetteJS")
 
 ### Running without run-scripts
 If you're not using one of the available run-scripts you must set the GETCONFIG_ROOT manually.
