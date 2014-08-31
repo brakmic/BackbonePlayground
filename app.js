@@ -27,10 +27,9 @@ module.exports = {
     },
 
     initApp: function(){
-
         var App = window.app = new Marionette.Application();
         //add App region
-        window.app.addInitializer(function(){
+        App.addInitializer(function(){
             App.addRegions({
                 main: '#app'
             });
