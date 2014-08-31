@@ -15,8 +15,8 @@ module.exports = Marionette.LayoutView.extend({
 
    onRender: function(){
       //set up the editor view
-      this.edit.show(new EditView({ model: app.user }));
+      this.edit.show(new EditView({ model: playground.user }));
       //set up the preview
-      this.preview.show(new Preview({ model: app.user }));
+      this.preview.show(new Preview({ model: playground.user }));
     }
 });

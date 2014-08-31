@@ -11,7 +11,7 @@ var MainView = require('./views/marionette/main_view');
 
 module.exports = {
     init: function(){
-        var self = window.app = this;
+        var self = window.playground = this;
         self.stringify = stringify;   //this is the 'circular-dependency-free' version of stringify
         self.User = User;             //for console testing
         self.user = new User();       //for displaying the 'two-way data-binding' example
@@ -26,36 +26,35 @@ module.exports = {
     },
 
     initApp: function(){
-        window.app.marionette = new Marionette.Application();
+        window.app = new Marionette.Application();
         //add App region
-        window.app.marionette.addInitializer(function(){
-            window.app.marionette.addRegions({
+        window.app.addInitializer(function(){
+            window.app.addRegions({
                 main: '#app'
             });
         });
         //add router
-        window.app.marionette.addInitializer(function(){
+        window.app.addInitializer(function(){
             //currently without an explicit Marionette-Controller
-            window.app.marionette.Router = new PlayRouter();
+            window.app.Router = new PlayRouter();
         });
         //add layout and base regions (header, sidebar, main)
-        window.app.marionette.addInitializer(function(){
-            window.app.initLayout();
+        window.app.addInitializer(function(){
+            window.playground.initLayout();
         });
         //start backbone history
-        window.app.marionette.on("start", function(){
+        window.app.on("start", function(){
             if (Backbone.history){
                 Backbone.history.start({pushState: true});
                 console.log('Backbone.History started.');
             }
         });
         //start marionette
-        window.app.marionette.start();
+        window.app.start();
     },
     initLayout: function(){
-        var m = window.app.marionette;
         var layout = new MainLayout();
-        m.main.show(layout);
+        window.app.main.show(layout);
 
         layout.headerRegion.show(new HeaderView());
         layout.sidebarRegion.show(new SidebarView());

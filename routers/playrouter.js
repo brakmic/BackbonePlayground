@@ -15,18 +15,18 @@ module.exports = Marionette.AppRouter.extend({
     customers: function(){
         var customers = new Customers();
         customers.fetch();
-        window.app.marionette.main.currentView.mainRegion.show(new CustomersListView(
+        window.app.main.currentView.mainRegion.show(new CustomersListView(
                                             {
                                                 collection: customers
                                             }));
     },
 
     blank: function(){
-        window.app.marionette.main.currentView.mainRegion.show(new BlankView());
+        window.app.main.currentView.mainRegion.show(new BlankView());
     },
 
     twoway: function(){
-        window.app.marionette.main.currentView.mainRegion.show(new TwoWayView());
+        window.app.main.currentView.mainRegion.show(new TwoWayView());
     },
 
     catchAll: function () {
