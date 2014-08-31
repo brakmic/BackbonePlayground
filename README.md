@@ -23,7 +23,7 @@ Icons & Fonts from [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
 
 #### MarionetteJS console debugging
 
-The Marionette.Application is located under `window.app` 
+The `Marionette.Application` is located under `window.app` 
 
 ![MarionetteJS Console](http://t88.imgup.net/marionette5d70.png "MarionetteJS")
 
