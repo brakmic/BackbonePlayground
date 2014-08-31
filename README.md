@@ -53,10 +53,9 @@ Windows:
 
 [BackboneJS](http://backbonejs.org)
 
-[AmpersandJS](http://ampersandjs.com)
-
 [MarionetteJS](http://marionettejs.com)
 
+[AmpersandJS](http://ampersandjs.com)
 
 #### License
 
