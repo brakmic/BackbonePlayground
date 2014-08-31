@@ -42,6 +42,8 @@ module.exports = {
             vendorScripts + 'backbone.wreqr.js',
             vendorScripts + 'backbone.babysitter.js',
             vendorScripts + 'backbone.marionette.js',
+            vendorScripts + 'backbone.radio.js',
+            vendorScripts + 'radio.shim.js',
             vendorScripts + 'backbone.stickit.js',
             scriptsDir    + 'custom.js'
         ],
