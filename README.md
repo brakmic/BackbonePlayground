@@ -31,7 +31,7 @@ dedicated solely to MarionetteJS.
 
 #### MarionetteJS console debugging
 
-![MarionetteJS Console](http://z74.imgup.net/marionettec4f4.png "MarionetteJS")
+![MarionetteJS Console](http://x86.imgup.net/marionettedfcd.png "MarionetteJS")
 
 ### Running without run-scripts
 If you're not using one of the available run-scripts you must set the GETCONFIG_ROOT manually.
