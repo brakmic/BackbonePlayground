@@ -1,8 +1,11 @@
-var BaseView = require('./base');
+var BaseView = require('./baseItemView');
 var templates = require('../templates/compiled');
 var _s = require('underscore.string');
 
 module.exports = BaseView.extend({
+    template: templates.preview,
+    tagName: 'div',
+    className: 'preview',
     bindings: {
         '.preview.firstName': 'firstName',
         '.preview.lastName': 'lastName',
@@ -19,9 +22,7 @@ module.exports = BaseView.extend({
         }
 
     },
-    render: function(){
-        this.$el.html(templates.preview);
+    onRender: function(){
         this.stickit();
-        return this;
     }
 });

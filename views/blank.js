@@ -1,14 +1,8 @@
-var BaseView = require('./base');
+var BaseView = require('./baseItemView');
 var templates = require('../templates/compiled');
 
-module.exports = Backbone.Marionette.ItemView.extend({
-
+module.exports = BaseView.extend({
+    tagName: 'div',
+    className: 'blank',
     template: templates.blank
-
-    /*MarionetteJS provides a render() function
-    -------------------------------------------*/
-    /*render: function(){
-        this.$el.html(templates.blank);
-        return this;
-    }*/
 });

@@ -1,7 +1,8 @@
-var BaseView = require('./base');
+var BaseView = require('./baseItemView');
 var templates = require('../templates/compiled');
 
 module.exports = BaseView.extend({
+        template: templates.includes.customer,
         tagName: 'li',
         className: 'list-group-item',
         bindings: {
@@ -17,12 +18,8 @@ module.exports = BaseView.extend({
        '.customer.phone': 'phone',
        '.customer.city': 'city'
     },
-    initialize: function(options){
-      this.model.on('change', this.render, this);
-    },
-    render: function(){
-        this.$el.html(templates.includes.customer);
+    onRender: function(){
+        //add two-way data-binding
         this.stickit();
-        return this;
     }
 });

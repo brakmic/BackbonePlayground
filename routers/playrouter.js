@@ -1,11 +1,9 @@
-var MainView = require('../views/main');
-var BlankView = require('../views/blank');
 var TwoWayView = require('../views/twoway');
+var BlankView = require('../views/blank');
 var CustomersListView = require('../views/customerlist');
 var Customers = require('../collections/customers');
 
-module.exports = Backbone.Router.extend({
-    subView: null,
+module.exports = Marionette.AppRouter.extend({
     routes: {
         '': 'blank',
         'home': 'blank',
@@ -14,45 +12,24 @@ module.exports = Backbone.Router.extend({
         '(*path)': 'catchAll'
     },
 
-    initialize: function(options) {
-        console.log('Initializing the Router');
-        this.main();
-    },
-
-    main: function(){
-        if(!this.mainView) {
-            this.mainView = new MainView({
-                el: 'body',
-                name: 'main'
-            });
-            this.mainView.render();
-        }
-    },
-
     customers: function(){
-        this.switchView(new CustomersListView({ collection: new Customers(), el: '#subview', name: 'cslistview' }));
+        var customers = new Customers();
+        customers.fetch();
+        window.app.marionette.main.currentView.mainRegion.show(new CustomersListView(
+                                            {
+                                                collection: customers
+                                            }));
     },
 
     blank: function(){
-        this.switchView(new BlankView({ el: '#subview', name: 'blank' }));
+        window.app.marionette.main.currentView.mainRegion.show(new BlankView());
     },
 
     twoway: function(){
-        this.switchView(new TwoWayView({ el: '#subview', name: 'twoway' }));
+        window.app.marionette.main.currentView.mainRegion.show(new TwoWayView());
     },
 
     catchAll: function () {
         this.blank();
-    },
-
-    switchView: function(view){
-        if(this.subView){
-            console.log('Unbinding & removing view: ' + this.subView.name);
-            this.subView.remove();
-        }
-        this.mainView.$el.append(view.el);
-        this.subView = view;
-        this.subView.render();
-
     }
 });

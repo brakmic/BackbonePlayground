@@ -35,6 +35,14 @@ body {
     min-height:1200px;
 }
 
+.m-nav.navigation-top.navbar-top-fixed {
+
+}
+
+#main-region {
+    padding-top: 5em;
+}
+
 .text-center {
     text-align:center;
 }

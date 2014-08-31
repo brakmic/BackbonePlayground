@@ -1,8 +1,10 @@
-var BaseView = require('./base');
+var BaseView = require('./baseItemView');
 var templates = require('../templates/compiled');
 
 module.exports = BaseView.extend({
-
+    template: templates.edit,
+    tagName: 'div',
+    className: 'edit',
     bindings: {
        '.edit.firstName': 'firstName',
        '.edit.lastName': 'lastName',
@@ -10,9 +12,7 @@ module.exports = BaseView.extend({
        '.edit.homepage': 'homepage'
     },
 
-    render: function(){
-        this.$el.html(templates.edit);
+    onRender: function(){
         this.stickit();
-        return this;
     }
 });

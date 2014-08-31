@@ -3,7 +3,5 @@ var _ = require('underscore');
 
 module.exports = Backbone.Collection.extend({
     model: Customer,
-    url: '/api/customers',
-    initialize: function(){
-    }
+    url: '/api/customers'
 });
