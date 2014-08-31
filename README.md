@@ -15,7 +15,7 @@ Runs on [HAPI-Server](http://hapijs.com)
 
 A nice design based on a free template from [redefineIT](http://redefineinfotech.com/5-free-bootstrap-html-templates/)
 
-![Backbone Playground](http://v55.imgup.net/playground5e1e.png "Screenshot")
+![Backbone Playground](http://q40.imgup.net/backbone_p1d5e.png "Playground Screenshot")
 
 Icons & Fonts from [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
 
