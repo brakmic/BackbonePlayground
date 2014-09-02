@@ -51,10 +51,17 @@ module.exports = {
             });
 
             app.module('InitModule', function(InitModule, App, Backbone, Marionette, $, _){
-                //add router
+
+                //add main region
+                App.addRegions({
+                    main: '#app'
+                });
+
+                //add router & controller
                 InitModule.addInitializer(function(){
                     //currently without an explicit Marionette-Controller
-                    InitModule.Router = new PlayRouter();
+                    InitModule.Controller = new PlayController();
+                    InitModule.Router = new PlayRouter({ controller: PlayController });
                 });
                 //add layout and base regions (header, sidebar, main)
                 InitModule.addInitializer(function(){
