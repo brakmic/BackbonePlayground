@@ -1,5 +1,6 @@
 var stringify = require('json-stringify-safe');
 var _ = require('underscore');
+var radio = require('backbone.radio');
 var domify = require('domify');
 var templates = require('./templates/compiled');
 var domReady = require('domready');
@@ -19,13 +20,24 @@ module.exports = {
         self.User = User;             //for console testing
         self.user = new User();       //for displaying the 'two-way data-binding' example
 
+
         document.head.appendChild(domify(templates.htmlhead()));
 
         domReady(function(){
             console.log('Welcome to the Backbone Playground');
             document.body.appendChild(domify(templates.marionette.app()));
+            self.initChannel('demoChannel');
             self.initModule(App);
             App.start();
+        });
+    },
+
+    initChannel: function(channelName){
+        console.log('Initializing Backbone.Radio channel: ' + channelName);
+        window.playground.demoChannel = new Backbone.Radio.channel(channelName);
+        window.playground.demoChannel.comply('execute:command', function(message){
+            alert('Executing command: ' + message);
+            //console.log('Executing command: ' + command);
         });
     },
 
@@ -38,14 +50,14 @@ module.exports = {
                 });
             });
 
-            app.module('MyModule', function(MyModule, App, Backbone, Marionette, $, _){
+            app.module('InitModule', function(InitModule, App, Backbone, Marionette, $, _){
                 //add router
-                MyModule.addInitializer(function(){
+                InitModule.addInitializer(function(){
                     //currently without an explicit Marionette-Controller
-                    MyModule.Router = new PlayRouter();
+                    InitModule.Router = new PlayRouter();
                 });
                 //add layout and base regions (header, sidebar, main)
-                MyModule.addInitializer(function(){
+                InitModule.addInitializer(function(){
                     var layout = new MainLayout();
                     layout.on('show', function(){
                         this.headerRegion.show(new HeaderView());

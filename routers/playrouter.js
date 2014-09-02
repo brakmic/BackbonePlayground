@@ -2,6 +2,7 @@ var TwoWayView = require('../views/twoway');
 var BlankView = require('../views/blank');
 var CustomersListView = require('../views/customerlist');
 var Customers = require('../collections/customers');
+var Command = require('../models/command');
 
 module.exports = Marionette.AppRouter.extend({
     routes: {
@@ -22,7 +23,7 @@ module.exports = Marionette.AppRouter.extend({
     },
 
     blank: function(){
-        window.app.main.currentView.mainRegion.show(new BlankView());
+        window.app.main.currentView.mainRegion.show(new BlankView( { model: new Command() }));
     },
 
     twoway: function(){

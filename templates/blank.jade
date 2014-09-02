@@ -10,3 +10,11 @@
                 p
                  |   It is based on <strong>MarionetteJS</strong>
                 p    It also reuses some modules from the <strong>AmpersandJS</strong> framework (getconfig, moonboots, templatizer etc.).
+
+                div.exec.command.area
+                    .exec.general-panel
+                        p.exec.panel
+                          label.exec.exec-command-label Command&nbsp&nbsp
+                            input.exec.exec-command(name='message', type='text', placeholder=' Enter a command')
+                        p.exec.button-panel
+                            input(type='button', id='command-button', value='Execute')

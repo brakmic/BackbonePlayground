@@ -34,6 +34,10 @@
     "underscore.string": "^2.3.3"
   },
   "devDependencies": {
-    "hapi-dummy-api": "^0.2.0"
+    "chai": "^1.9.1",
+    "hapi-dummy-api": "^0.2.0",
+    "mocha": "^1.21.4",
+    "sinon": "^1.10.3",
+    "sinon-chai": "^2.5.0"
   }
 }

@@ -16,6 +16,19 @@ body {
     font-family: 'Open Sans', sans-serif;
  }
 
+.exec.command.area {
+    border-color: black;
+    border-style: dotted;
+}
+
+.exec.general-panel {
+    padding-left: 5em;
+}
+
+.exec.button-panel {
+    padding-left: 8em;
+}
+
 #wrapper {
     width: 100%;
     background:#202020;

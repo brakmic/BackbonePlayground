@@ -39,12 +39,12 @@ module.exports = {
             vendorScripts + 'underscore.string.js',
             vendorScripts + 'bootstrap.js',
             vendorScripts + 'backbone.js',
+            vendorScripts + 'backbone.stickit.js',
             vendorScripts + 'backbone.wreqr.js',
             vendorScripts + 'backbone.babysitter.js',
             vendorScripts + 'backbone.marionette.js',
             vendorScripts + 'backbone.radio.js',
             vendorScripts + 'radio.shim.js',
-            vendorScripts + 'backbone.stickit.js',
             scriptsDir    + 'custom.js'
         ],
         // Specify the stylesheets we want to bundle
