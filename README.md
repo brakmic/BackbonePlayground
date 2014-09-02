@@ -34,7 +34,13 @@ The `Marionette.Application` is located under `window.app`
 The upcoming release 3 of MarionetteJS will replace Backbone.Wreqr with Backbone.Radio. There's also a [shim](https://gist.github.com/jmeas/7992474cdb1c5672d88b) 
 for the version 2.1 which is included in this Playground. Here's an example on how to use Backbone.Radio
 
-![Backbone.Radio Console](http://s86.imgup.net/backbone_r42e4.png "Backbone.Radio")
+![Backbone.Radio Console](http://s86.imgup.net/backbone_r42e4.png "Backbone.Radio Console")
+
+Another example is located on the front page. Just type something into the box.
+
+Check the code in `views/blank.js`
+
+![Backbone.Radio Web Example](http://n33.imgup.net/backbonerabe42.png "Backbone.Radio Web")
 
 ### Running without run-scripts
 If you're not using one of the available run-scripts you must set the GETCONFIG_ROOT manually.
