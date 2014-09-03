@@ -6,6 +6,7 @@ var templates = require('./templates/compiled');
 var domReady = require('domready');
 var User = require('./models/user');
 var PlayRouter = require('./routers/playrouter');
+var PlayController = require('./controllers/playcontroller');
 var MainLayout = require('./views/marionette/main_layout');
 var HeaderView = require('./views/marionette/header_view');
 var SidebarView = require('./views/marionette/sidebar_view');
@@ -20,14 +21,13 @@ module.exports = {
         self.User = User;             //for console testing
         self.user = new User();       //for displaying the 'two-way data-binding' example
 
-
         document.head.appendChild(domify(templates.htmlhead()));
 
         domReady(function(){
             console.log('Welcome to the Backbone Playground');
             document.body.appendChild(domify(templates.marionette.app()));
             self.initChannel('demoChannel');
-            self.initModule(App);
+            self.initModule();
             App.start();
         });
     },
@@ -41,16 +41,11 @@ module.exports = {
         });
     },
 
-    initModule: function(app){
-        if(app){
-            //add App region
-            app.addInitializer(function(){
-                app.addRegions({
-                    main: '#app'
-                });
-            });
+    initModule: function(){
+        var App = window.app;
+        if(App){
 
-            app.module('InitModule', function(InitModule, App, Backbone, Marionette, $, _){
+            App.module('InitModule', function(InitModule, App, Backbone, Marionette, $, _){
 
                 //add main region
                 App.addRegions({
@@ -60,8 +55,8 @@ module.exports = {
                 //add router & controller
                 InitModule.addInitializer(function(){
                     //currently without an explicit Marionette-Controller
-                    InitModule.Controller = new PlayController();
-                    InitModule.Router = new PlayRouter({ controller: PlayController });
+                    App.Controller = new PlayController();
+                    App.Router = new PlayRouter({ controller: App.Controller });
                 });
                 //add layout and base regions (header, sidebar, main)
                 InitModule.addInitializer(function(){

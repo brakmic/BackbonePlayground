@@ -4,7 +4,7 @@ var CustomersListView = require('../views/customerlist');
 var Customers = require('../collections/customers');
 var Command = require('../models/command');
 
-module.exports = Backbone.Marionette.Controller({
+module.exports = Marionette.Controller.extend({
     customers: function(){
         var customers = new Customers();
         customers.fetch();
@@ -22,7 +22,7 @@ module.exports = Backbone.Marionette.Controller({
         window.app.main.currentView.mainRegion.show(new TwoWayView());
     },
 
-    catchAll: function () {
+    catchAll: function() {
         this.blank();
     }
 });

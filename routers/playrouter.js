@@ -1,5 +1,7 @@
+//var PlayController = require('../controllers/playcontroller');
+
 module.exports = Marionette.AppRouter.extend({
-    routes: {
+    appRoutes: {
         '': 'blank',
         'home': 'blank',
         'customers': 'customers',
