@@ -16,7 +16,7 @@ module.exports = {
 
     init: function(){
         var self = window.playground = this;
-        var App = window.app = new Marionette.Application();
+        window.app = window.app || {};
         self.stringify = stringify;   //this is the 'circular-dependency-free' version of stringify
         self.User = User;             //for console testing
         self.user = new User();       //for displaying the 'two-way data-binding' example
@@ -27,8 +27,8 @@ module.exports = {
             console.log('Welcome to the Backbone Playground');
             document.body.appendChild(domify(templates.marionette.app()));
             self.initChannel('demoChannel');
-            self.initModule();
-            App.start();
+            self.app = window.app = self.initApp();
+            self.app.start();
         });
     },
 
@@ -41,44 +41,40 @@ module.exports = {
         });
     },
 
-    initModule: function(){
-        var App = window.app;
-        if(App){
+    initApp: function() {
+        var App = new Marionette.Application();
 
-            App.module('InitModule', function(InitModule, App, Backbone, Marionette, $, _){
+        App.module('InitModule', function (InitModule, App, Backbone, Marionette, $, _) {
 
-                //add main region
-                App.addRegions({
-                    main: '#app'
-                });
-
-                //add router & controller
-                InitModule.addInitializer(function(){
-                    App.Controller = new PlayController();
-                    App.Router = new PlayRouter({ controller: App.Controller });
-                });
-                //add layout and base regions (header, sidebar, main)
-                InitModule.addInitializer(function(){
-                    var layout = new MainLayout();
-                    layout.on('show', function(){
-                        this.headerRegion.show(new HeaderView());
-                        this.sidebarRegion.show(new SidebarView());
-                        this.mainRegion.show(new MainView());
-                    });
-                    App.main.show(layout);
-                });
-                //start backbone history
-                App.on("start", function(){
-                    if (Backbone.history){
-                        Backbone.history.start({pushState: true});
-                        console.log('Backbone.History started.');
-                    }
-                });
+            //add main region
+            App.addRegions({
+                main: '#app'
             });
 
-        }else{
-            throw new Error('Marionette.Application was not initialized.')
-        }
+            //add router & controller
+            InitModule.addInitializer(function () {
+                App.Controller = new PlayController();
+                App.Router = new PlayRouter({ controller: App.Controller });
+            });
+            //add layout and base regions (header, sidebar, main)
+            InitModule.addInitializer(function () {
+                var layout = new MainLayout();
+                layout.on('show', function () {
+                    this.headerRegion.show(new HeaderView());
+                    this.sidebarRegion.show(new SidebarView());
+                    this.mainRegion.show(new MainView());
+                });
+                App.main.show(layout);
+            });
+            //start backbone history
+            App.on("start", function () {
+                if (Backbone.history) {
+                    Backbone.history.start({pushState: true});
+                    console.log('Backbone.History started.');
+                }
+            });
+        });
+        return App;
     }
 };
 
