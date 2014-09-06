@@ -54,7 +54,6 @@ module.exports = {
 
                 //add router & controller
                 InitModule.addInitializer(function(){
-                    //currently without an explicit Marionette-Controller
                     App.Controller = new PlayController();
                     App.Router = new PlayRouter({ controller: App.Controller });
                 });
