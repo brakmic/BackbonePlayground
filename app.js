@@ -16,7 +16,6 @@ module.exports = {
 
     init: function(){
         var self = window.playground = this;
-        window.app = window.app || {};
         self.stringify = stringify;   //this is the 'circular-dependency-free' version of stringify
         self.User = User;             //for console testing
         self.user = new User();       //for displaying the 'two-way data-binding' example
@@ -27,8 +26,8 @@ module.exports = {
             console.log('Welcome to the Backbone Playground');
             document.body.appendChild(domify(templates.marionette.app()));
             self.initChannel('demoChannel');
-            self.app = window.app = self.initApp();
-            self.app.start();
+            window.app = self.initApp();
+            window.app.start();
         });
     },
 
