@@ -1,0 +1,74 @@
+body {
+  background: #fff;
+/* Custom container */
+}
+body html,
+body body {
+  height: 100%;
+  position: relative;
+  padding-top: 40px;
+}
+body .sidebar-nav-fixed {
+  position: fixed;
+  top: 60px;
+  width: 250px;
+}
+body .sidebar-collapse {
+/* Adds shadow */
+  box-shadow: 0 0 5px 4px rgba(0,0,0,0.2);
+  border: 1px rgba(0,0,0,0.1) solid;
+}
+body #subview {
+  padding-top: 70px;
+}
+body .navbar-top-fixed {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+  left: 0;
+/* Adds shadow to the bottom of the bar */
+  -webkit-box-shadow: 0px 0px 8px 0px #000;
+  -moz-box-shadow: 0px 0px 8px 0px #000;
+  box-shadow: 0px 0px 8px 0px #000;
+/* Adds the transparent background */
+  background-color: rgba(1,1,1,0.8);
+  color: rgba(1,1,1,0.8);
+}
+body .customer.picture {
+  max-height: 100px;
+  max-width: 100px;
+}
+body .center {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+body h1 {
+  font-family: 'Antic Slab', serif;
+  font-size: 80px;
+  color: #dce;
+}
+body .welcome {
+  color: #285e8e;
+  text-shadow: 1px 1px 1px #ccc;
+  font-size: 1.5em;
+}
+body .lead {
+  color: #dce;
+}
+body .container-full {
+  margin: 0 auto;
+  width: 100%;
+  min-height: 100%;
+  background-color: #102;
+  color: #eee;
+  overflow: hidden;
+}
+body .container-full a {
+  color: #efefef;
+  text-decoration: none;
+}
+body .v-center {
+  margin-top: 7%;
+}
