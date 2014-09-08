@@ -397,4 +397,29 @@ p {
 
 }
 
+/*================================================
+    POLYMER DEMO
+ ================================================*/
+div.polymer-demo {
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+}
+div.polymer-demo div#target {
+    display: inline-block;
+    background-color: dimgrey;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 50px;
+    font-size: 30px;
+    color: white;
+}
+div.polymer-demo div.animations > * {
+    display: inline-block;
+    background-color: darkgrey;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 5px;
+    color: white;
+}
+
 

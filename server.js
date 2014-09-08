@@ -58,12 +58,31 @@ server.route({
 
 server.route({
     method: 'GET',
+    path: '/scripts/{param*}',
+    handler:{
+        directory: {
+            path: 'scripts/',
+            listing: false
+        }
+    }
+});
+
+
+server.route({
+    method: 'GET',
     path: '/favicon.ico',
     handler: function(request, reply){
         reply.file('favicon.ico');
     }
 });
 
+server.route({
+    method: 'GET',
+    path: '/polymer-demo.html',
+    handler: function(request, reply){
+        reply.file('templates/polymer-demo.html');
+    }
+});
 
 // set clientconfig cookie
 internals.configStateConfig = {

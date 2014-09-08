@@ -16,7 +16,7 @@
     templatizer["includes"] = {};
     templatizer["marionette"] = {};
 
-    // attic/index.jade compiled template
+    // attic\index.jade compiled template
     templatizer["attic"]["index"] = function tmpl_attic_index() {
         return '<!--for testing in the console--><!--another option is to load these scripts from node_modules via require()--><script src="scripts/vendor/jquery-2.1.1.js"></script><script src="scripts/vendor/underscore.js"></script><script src="scripts/vendor/backbone.js"></script><script src="scripts/vendor/bootstrap.js"></script>';
     };
@@ -46,39 +46,39 @@
         return '<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0"/><meta name="apple-mobile-web-app-capable" content="yes"/><title>Backbone Playground</title><!--link(href=\'http://fonts.googleapis.com/css?family=Open+Sans\', rel=\'stylesheet\', type=\'text/css\')-->';
     };
 
-    // includes/customer.jade compiled template
+    // includes\customer.jade compiled template
     templatizer["includes"]["customer"] = function tmpl_includes_customer() {
         return '<div class="customer"><img src="http://robohash.org/test" class="customer picture"/><div><label for="firstName">First name:&nbsp&nbsp<span class="customer firstName"></span></label></div><div><label for="lastName">Last name:&nbsp&nbsp<span class="customer lastName"></span></label></div><div><label for="email">E-Mail:&nbsp&nbsp<span class="customer email"></span></label></div><div><label for="phone">Phone:&nbsp&nbsp<span class="customer phone"></span></label></div><div><label for="city">City:&nbsp&nbsp<span class="customer city"></span></label></div></div>';
     };
 
-    // marionette/app.jade compiled template
+    // marionette\app.jade compiled template
     templatizer["marionette"]["app"] = function tmpl_marionette_app() {
         return '<div id="app" class="app-container"></div>';
     };
 
-    // marionette/header_nav.jade compiled template
+    // marionette\header_nav.jade compiled template
     templatizer["marionette"]["header_nav"] = function tmpl_marionette_header_nav() {
         return '<div class="m-nav navigation-top navbar-top-fixed"><nav role="navigation" style="margin-bottom:0" class="navbar navbar-default navbar-cls-top"><div class="navbar-header m-header"><button type="button" data-toggle="collapse" data-target=".sidebar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="navbar-brand"><i>Playground</i></a></div><div style="color: blue;padding: 15px 50px 5px 50px;float: right;font-size: 16px;">Last access : 30 May 2014 &nbsp;<a href="#" class="btn btn-danger square-btn-adjust">Logout</a></div></nav></div>';
     };
 
-    // marionette/main_layout.jade compiled template
+    // marionette\main_layout.jade compiled template
     templatizer["marionette"]["main_layout"] = function tmpl_marionette_main_layout() {
         return '<div id="header-region" class="m-header"></div><div id="sidebar-region" class="m-sidebar"></div><div id="main-region" class="m-main"></div>';
     };
 
-    // marionette/main_region.jade compiled template
+    // marionette\main_region.jade compiled template
     templatizer["marionette"]["main_region"] = function tmpl_marionette_main_region() {
         return '<div id="main" class="marionette-main-region"></div>';
     };
 
-    // marionette/main_view.jade compiled template
+    // marionette\main_view.jade compiled template
     templatizer["marionette"]["main_view"] = function tmpl_marionette_main_view() {
         return '<div id="main-view"></div>';
     };
 
-    // marionette/sidebar_nav.jade compiled template
+    // marionette\sidebar_nav.jade compiled template
     templatizer["marionette"]["sidebar_nav"] = function tmpl_marionette_sidebar_nav() {
-        return '<div class="navigation-left m-sidebar sidebar-nav-fixed"><nav role="navigation" class="navbar-default navbar-side"><div class="sidebar-collapse"><ul id="sidebar" class="nav list-group backbone-playground sidebar-menu"><li class="text-center"><img src="/public/css/images/backbone_logo.png" class="user-image img-responsive"/></li><li><a href="/home" class="menu-item active-menu"><i class="fa fa-home fa-lg">&nbsp&nbspHome</i></a></li><li><a href="/twoway" class="menu-item"><i class="fa fa-desktop fa-lg">&nbsp&nbspTwo-Way Data Binding</i></a></li><li><a href="/customers" class="menu-item"><i class="fa fa-qrcode fa-lg">&nbsp&nbspREST-API</i></a></li><li><a href="/" class="menu-item"><i class="fa fa-bar-chart-o fa-lg">&nbsp&nbspStatistics</i></a></li><li><a href="/" class="menu-item"><i class="fa fa-table fa-lg">&nbsp&nbspTables</i></a></li><li><a href="/" class="menu-item"><i class="fa fa-edit fa-lg">&nbsp&nbspForms</i></a></li><li><a href="/" class="menu-item"><i class="fa fa-sitemap fa-lg">&nbsp&nbspDropdown Demo</i><span class="fa arrow"></span><ul id="dropdown-menu" class="nav nav-second-level"><li><a href="/" class="menu-item">Second Level Link</a></li><li><a href="/" class="menu-item">Second Level Link</a></li></ul></a></li><li><a href="/" class="menu-item"><i class="fa fa-square-o fa-lg">&nbsp&nbspBlank Page</i></a></li></ul></div></nav></div>';
+        return '<div class="navigation-left m-sidebar sidebar-nav-fixed"><nav role="navigation" class="navbar-default navbar-side"><div class="sidebar-collapse"><ul id="sidebar" class="nav list-group backbone-playground sidebar-menu"><li class="text-center"><img src="/public/css/images/backbone_logo.png" class="user-image img-responsive"/></li><li><a href="/home" class="menu-item active-menu"><i class="fa fa-home fa-lg">&nbsp&nbspHome</i></a></li><li><a href="/twoway" class="menu-item"><i class="fa fa-desktop fa-lg">&nbsp&nbspTwo-Way Data Binding</i></a></li><li><a href="/customers" class="menu-item"><i class="fa fa-qrcode fa-lg">&nbsp&nbspREST-API</i></a></li><li><a href="/" class="menu-item"><i class="fa fa-bar-chart-o fa-lg">&nbsp&nbspEmpty</i></a></li><li><a href="/" class="menu-item"><i class="fa fa-table fa-lg">&nbsp&nbspEmpty</i></a></li><li><a href="/" class="menu-item"><i class="fa fa-edit fa-lg">&nbsp&nbspEmpty</i></a></li><li><a href="/" class="menu-item"><i class="fa fa-sitemap fa-lg">&nbsp&nbspDropdown Demo</i><span class="fa arrow"></span><ul id="dropdown-menu" class="nav nav-second-level"><li><a href="/" class="menu-item">Empty Second Level Link</a></li><li><a href="/" class="menu-item">Empty Second Level Link</a></li></ul></a></li><li><a href="/" class="menu-item"><i class="fa fa-square-o fa-lg">&nbsp&nbspEmpty</i></a></li></ul></div></nav></div>';
     };
 
     // preview.jade compiled template
