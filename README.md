@@ -7,7 +7,7 @@ To run the Playground use the appropriate run-scripts.
 
 #### Elements
 
-Built-in [CoffeScript](http://coffeescript.org/) compilation in dev environment.
+Built-in [CoffeeScript](http://coffeescript.org/) compilation in dev environment.
 
 Two-Way data binding with [Backbone.Stickit](http://nytimes.github.io/backbone.stickit/)
 
