@@ -36,7 +36,7 @@ The compilation starts on ___each page reload___ in ___dev___ environment. The c
 their CoffeeScript counterparts. To change this behavior set a general `--output [DIR]` in `Cakefile`.  
 For example `coffee --compile --output OUT_DIR .` More information regarding CoffeeScript compilation can be found [here](http://arcturo.github.io/library/coffeescript/05_compiling.html).
 
-___Required___: Install CoffeeScript with `npm i -g coffee-script`
+Install CoffeeScript with `npm i -g coffee-script`
 
 #### MarionetteJS console debugging
 
