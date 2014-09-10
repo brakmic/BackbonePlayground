@@ -7,6 +7,8 @@ To run the Playground use the appropriate run-scripts.
 
 #### Elements
 
+Built-in [CoffeScript](http://coffeescript.org/) compilation in dev environment.
+
 Two-Way data binding with [Backbone.Stickit](http://nytimes.github.io/backbone.stickit/)
 
 Two mock APIs based on [hapi-dummy-api](https://github.com/HenrikJoreteg/hapi-dummy-api)
@@ -24,6 +26,17 @@ A nice design based on a free template from [redefineIT](http://redefineinfotech
 Icons & Fonts from [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
 
 ...more to come soon ;)
+
+#### CoffeeScript compilation
+
+Compilation is supported via `config/coffee_config.js` which is a simple CommonJS module. There's already a  `Cakefile` located in the project root. 
+By default the compilation starts with `cake build` but it can be adjusted by modifying the `Cakefile` and/or `config/coffee_config.js`.
+The compilation is disabled in ___prod environment___ (see `dev_config.json` & `production_config.json`).
+The compilation starts on ___each page reload___ in ___dev___ environment. The compiled JS files are located together with 
+their CoffeeScript counterparts. To change this behavior set a general `--output [DIR]` in `Cakefile`.  
+For example `coffee --compile --output OUT_DIR .` More information regarding CoffeeScript compilation can be found [here](http://arcturo.github.io/library/coffeescript/05_compiling.html).
+
+To use CoffeeScript in ___Backbone Playground___ install it with `npm i -g coffee-script`
 
 #### MarionetteJS console debugging
 

@@ -1,6 +1,7 @@
 // this config file was taken from the AmpersandJS framework
 var config = require('getconfig');
 var path = require('path');
+var coffee = require('./coffee_config');
 var stylizer = require('stylizer');
 var templatizer = require('templatizer');
 
@@ -59,6 +60,10 @@ module.exports = {
             // refresh in your browser to get new templates.
             if (config.isDev) {
                 templatizer(templatesDir, templatesDir + '/compiled.js');
+            }
+            //Compile CoffeScript files
+            if(config.coffeescript.compile){
+                coffee('cake','build');
             }
         },
         beforeBuildCSS: function (done) {

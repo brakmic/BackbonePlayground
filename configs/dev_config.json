@@ -19,5 +19,8 @@
     },
     "templates": {
         "rootDir": "templates"
+    },
+    "coffeescript": {
+        "compile": true
     }
 }
