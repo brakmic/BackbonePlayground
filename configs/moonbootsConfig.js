@@ -9,9 +9,7 @@ var appDir = path.resolve(__dirname + '/../');
 var cssDir = appDir + '/public/css/';
 var scriptsDir = appDir + '/scripts/';
 var vendorScripts = scriptsDir + '/vendor/';
-var bowerScripts = './bower_components/';
 var templatesDir = appDir + '/' + config.templates.rootDir;
-var templatesCompiledDir = appDir + '/' + config.templates.compiledDir;
 
 module.exports = {
     // Tell the Hapi server what URLs the application should be served from.
