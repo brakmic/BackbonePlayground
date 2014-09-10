@@ -13,6 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "backbone": "^1.1.2",
+    "backbone.marionette": "^2.2.0",
     "backbone.stickit": "^0.8.0",
     "backbone.radio": "^0.6.0",
     "bootstrap": "^3.2.0",
@@ -26,8 +27,6 @@
     "json-stringify-safe": "^5.0.0",
     "moonboots": "^2.0.6",
     "moonboots_hapi": "^2.4.0",
-    "parentpath": "^0.2.0",
-    "path": "^0.4.9",
     "poop": "^1.2.2",
     "stylizer": "^1.0.0",
     "templatizer": "^1.0.0",

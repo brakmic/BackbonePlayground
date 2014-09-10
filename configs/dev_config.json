@@ -18,7 +18,6 @@
         "debugMode": true
     },
     "templates": {
-        "rootDir": "templates",
-        "compiledDir": "templates/compiled"
+        "rootDir": "templates"
     }
 }
