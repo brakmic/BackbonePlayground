@@ -31,8 +31,8 @@ Icons & Fonts from [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
 
 Compilation is supported via `configs/coffee_config.js` which is a simple CommonJS module. There's already a  `Cakefile` located in the project root. 
 By default the compilation starts with `cake build` but it can be adjusted by modifying the `Cakefile` and/or `configs/coffee_config.js`.
-The compilation is disabled in ___prod environment___ (see `dev_config.json` & `production_config.json`).
-The compilation starts on ___each page reload___ in ___dev___ environment. The compiled JS files are located together with 
+The compilation is disabled in _prod environment_ (see `dev_config.json` & `production_config.json`).
+The compilation starts on _each page reload_ in _dev_ environment. The compiled JS files are located together with 
 their CoffeeScript counterparts. To change this behavior set a general `--output [DIR]` in `Cakefile`.  
 For example `coffee --compile --output OUT_DIR .` More information regarding CoffeeScript compilation can be found [here](http://arcturo.github.io/library/coffeescript/05_compiling.html).
 
@@ -46,7 +46,7 @@ The `Marionette.Application` is located under `window.app`
 
 #### Backbone.Radio
 
-The upcoming release 3 of MarionetteJS will replace Backbone.Wreqr with Backbone.Radio. There's also a [shim](https://gist.github.com/jmeas/7992474cdb1c5672d88b) 
+In the upcoming release 3 of MarionetteJS _Backbone.Wreqr_ will be replaced by _Backbone.Radio_. There's also a [shim](https://gist.github.com/jmeas/7992474cdb1c5672d88b) 
 for the version 2.1 which is included in this Playground. Here's an example on how to use Backbone.Radio
 
 ![Backbone.Radio Console](http://s86.imgup.net/backbone_r42e4.png "Backbone.Radio Console")
