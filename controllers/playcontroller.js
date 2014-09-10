@@ -22,6 +22,10 @@ module.exports = Marionette.Controller.extend({
         window.app.main.currentView.mainRegion.show(new TwoWayView());
     },
 
+    download: function(filename){
+        console.log(filename);
+    },
+
     catchAll: function() {
         this.blank();
     }

@@ -6,6 +6,7 @@ module.exports = Marionette.AppRouter.extend({
         'home': 'blank',
         'customers': 'customers',
         'twoway': 'twoway',
+        'download/*filename': 'download',
         '(*path)': 'catchAll'
     }
 });

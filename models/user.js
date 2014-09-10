@@ -1,3 +1,4 @@
+var test = require('./test_model');
 module.exports = Backbone.Model.extend({
     url: '/api/users',
     defaults: {

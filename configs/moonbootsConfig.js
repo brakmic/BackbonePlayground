@@ -6,7 +6,7 @@ var stylizer = require('stylizer');
 var templatizer = require('templatizer');
 
 // helper vars
-var appDir = path.resolve(__dirname + '/../');
+var appDir = path.resolve(__dirname + '/../') + '/';
 var cssDir = appDir + '/public/css/';
 var scriptsDir = appDir + '/scripts/';
 var vendorScripts = scriptsDir + '/vendor/';
@@ -46,6 +46,7 @@ module.exports = {
             vendorScripts + 'backbone.radio.js',
             vendorScripts + 'radio.shim.js',
             scriptsDir    + 'custom.js'
+
         ],
         // Specify the stylesheets we want to bundle
         stylesheets: [
