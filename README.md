@@ -30,6 +30,13 @@ Icons & Fonts from [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
 
 ![Backbone Playground](http://q40.imgup.net/backbone_p1d5e.png "Playground Screenshot")
 
+#### Building with Gulp
+
+Playground uses Gulp as its build system by default. 
+To compile everything type in `gulp`
+To start server `gulp server`
+To activate the production build `gulp production`
+
 #### CoffeeScript compilation
 
 Compilation is supported via `configs/coffee_config.js` which is a simple CommonJS module. There's already a  `Cakefile` located in the project root. 
