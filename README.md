@@ -34,6 +34,9 @@ Icons & Fonts from [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
 
 Compilation is supported via `configs/coffee_config.js` which is a simple CommonJS module. There's already a  `Cakefile` located in the project root. 
 By default the compilation starts with `cake build` but it can be adjusted by modifying the `Cakefile` and/or `configs/coffee_config.js`.
+
+_Below information is only valid if building with Moonboots!_
+
 The compilation is disabled in _prod environment_ (see `configs/dev_config.json` & `configs/production_config.json`).
 The compilation starts on _each page reload_ in _dev_ environment. The compiled JS files are located together with 
 their CoffeeScript counterparts. To change this behavior set a general `--output [DIR]` in `Cakefile`.  
