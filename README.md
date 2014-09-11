@@ -40,8 +40,6 @@ Debug build: `gulp`
 
 Start server: `gulp server`   
 
-Start watcher: `gulp watch`   
-
 Production build: `gulp production`   
 
 
