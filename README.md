@@ -6,9 +6,9 @@ To run the Playground use the appropriate run-scripts.
 
 #### Elements
 
-[Gulp](https://www.npmjs.org/package/gulp) build system [active by default]
+[Gulp](https://www.npmjs.org/package/gulp) build system [_active by default_]
 
-[Moonboots](https://www.npmjs.org/package/moonboots) build-toolset from AmpersandJS [see configs/moonbootsConfig.js & server.js]
+[Moonboots](https://www.npmjs.org/package/moonboots) build-toolset from AmpersandJS [_see configs/moonbootsConfig.js & server.js_]
 
 Built-in [CoffeeScript](http://coffeescript.org/) compilation in dev environment.
 
