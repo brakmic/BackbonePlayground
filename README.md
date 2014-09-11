@@ -36,9 +36,9 @@ Playground uses Gulp as its build system by default.
  
 _Current config defines following commands_  
 
-Debug build: `gulp`   
+Start server: `gulp server`  
 
-Start server: `gulp server`   
+Debug build: `gulp`    
 
 Production build: `gulp production`   
 
