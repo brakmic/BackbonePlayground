@@ -35,10 +35,10 @@ Icons & Fonts from [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
 Playground uses Gulp as its build system by default.
  
 _Current config defines following commands_
-Debug build: `gulp`
-Start server: `gulp server`
-Start watcher: `gulp watch`
-Production build `gulp production`
+Debug build: `gulp` 
+Start server: `gulp server` 
+Start watcher: `gulp watch` 
+Production build `gulp production` 
 
 #### CoffeeScript compilation
 
