@@ -6,6 +6,10 @@ To run the Playground use the appropriate run-scripts.
 
 #### Elements
 
+[Gulp](https://www.npmjs.org/package/gulp) build system [active by default]
+
+[Moonboots](https://www.npmjs.org/package/moonboots) build-toolset from AmpersandJS [see configs/moonbootsConfig.js & server.js]
+
 Built-in [CoffeeScript](http://coffeescript.org/) compilation in dev environment.
 
 Two-Way data binding with [Backbone.Stickit](http://nytimes.github.io/backbone.stickit/)
