@@ -90,7 +90,6 @@ gulp.task('templates', function() {
 });;
 //we need index.jade/*.html to put the scripts & styles (if using moonBoots there's no need for index.jade/*.html
 //because moonBoots automatically generates index.html with appropriate scripts/styles in it)
-//therefore if you switch to moonBoots you can safely delete index.jade from root directory)
 gulp.task('html', function() {
   gulp.src(paths.src + 'index.jade')
     .pipe(plumber())
