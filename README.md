@@ -32,10 +32,13 @@ Icons & Fonts from [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
 
 #### Building with Gulp
 
-Playground uses Gulp as its build system by default. 
-To compile everything type in `gulp`
-To start server `gulp server`
-To activate the production build `gulp production`
+Playground uses Gulp as its build system by default.
+ 
+_Current config defines following commands_
+Debug build: `gulp`
+Start server: `gulp server`
+Start watcher: `gulp watch`
+Production build `gulp production`
 
 #### CoffeeScript compilation
 
