@@ -10,7 +10,7 @@ To run the Playground use the appropriate run-scripts.
 
 [Moonboots](https://www.npmjs.org/package/moonboots) build-toolset from AmpersandJS [_see configs/moonbootsConfig.js & server.js_]
 
-Built-in [CoffeeScript](http://coffeescript.org/) compilation in dev environment.
+[CoffeeScript](http://coffeescript.org/) compilation
 
 Two-Way data binding with [Backbone.Stickit](http://nytimes.github.io/backbone.stickit/)
 
