@@ -10,7 +10,7 @@ To run the Playground use the appropriate run-scripts.
 
 [Moonboots](https://www.npmjs.org/package/moonboots) build-toolset from AmpersandJS [_see configs/moonbootsConfig.js & server.js_]
 
-[CoffeeScript](http://coffeescript.org/) compilation [_optional_]
+[CoffeeScript](http://coffeescript.org/) compilation
 
 Two-Way data binding with [Backbone.Stickit](http://nytimes.github.io/backbone.stickit/)
 
@@ -18,11 +18,11 @@ Two mock APIs based on [hapi-dummy-api](https://github.com/HenrikJoreteg/hapi-du
 
 [Backbone.Radio](https://github.com/jmeas/backbone.radio) to build decoupled applications.
 
-Runs on [HAPI-Server](http://hapijs.com)
+Runs on a [HAPI-Server](http://hapijs.com)
 
 Templating with [Jade](http://jade-lang.com/)
 
-A nice design based on a free template from [redefineIT](http://redefineinfotech.com/5-free-bootstrap-html-templates/)
+Design based on a free template from [redefineIT](http://redefineinfotech.com/5-free-bootstrap-html-templates/)
 
 Icons & Fonts from [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
 
@@ -32,7 +32,7 @@ Icons & Fonts from [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
 
 #### Building with Gulp
 
-Playground uses Gulp as its build system by default.
+Playground uses Gulp as its build system.
  
 _Current config defines following commands_  
 
@@ -47,13 +47,11 @@ Production build: `gulp production`
 
 Compilation is supported via `configs/coffee_config.js` which is a simple CommonJS module. There's already a  `Cakefile` located in the project root. 
 By default the compilation starts with `cake build` but it can be adjusted by modifying the `Cakefile` and/or `configs/coffee_config.js`.
-
-_Below CoffeeScript-compile information is only valid if running with Moonboots!_
-
-The compilation is disabled in _prod environment_ (see `configs/dev_config.json` & `configs/production_config.json`).
 The compilation starts on _each page reload_ in _dev_ environment. The compiled JS files are located together with 
 their CoffeeScript counterparts. To change this behavior set a general `--output [DIR]` in `Cakefile`.  
-For example `coffee --compile --output OUT_DIR .` More information regarding CoffeeScript compilation can be found [here](http://arcturo.github.io/library/coffeescript/05_compiling.html).
+For example `coffee --compile --output OUT_DIR .` 
+
+More information regarding CoffeeScript compilation can be found [here](http://arcturo.github.io/library/coffeescript/05_compiling.html).
 
 Install CoffeeScript with `npm i -g coffee-script`
 
