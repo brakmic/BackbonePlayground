@@ -4,7 +4,7 @@ This is a testing environment for WebApps based on MarionetteJS.
 
 To run the Playground use the appropriate run-scripts.
 
-#### Elements
+#### Component Parts
 
 [Gulp](https://www.npmjs.org/package/gulp) build system [_active by default_]
 
