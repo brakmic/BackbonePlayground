@@ -34,8 +34,6 @@ Icons & Fonts from [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
 
 Playground uses Gulp as its build system.
  
-_Current config defines following commands_  
-
 Start server: `gulp server`  
 
 Debug build: `gulp`    
