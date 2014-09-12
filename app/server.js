@@ -1,7 +1,8 @@
 var Hapi = require('hapi');
-var config = require('getconfig');
+//var config = require('getconfig');
+var config = require('./configs/playground');
 var server = new Hapi.Server('localhost', config.http.port);
-//var moonbootsConfig = require(config.root + '/moonbootsConfig');
+var moonbootsConfig = require(config.root + '/moonbootsConfig');
 var goodConfig = require(config.root + '/goodConfig');
 var customersAPI = require(config.root + '/customersAPI');
 var usersAPI = require(config.root + '/usersAPI');
@@ -10,11 +11,10 @@ var serverName = 'Backbone Playground';
 var internals = {};
 
 
-//!!!if not using GULP activate moonbootsPlugin and switch the "server.pack.register" function below!!!
-/*var moonbootsPlugin = {
+var moonbootsPlugin = {
                        plugin: require('moonboots_hapi'),
                        options: moonbootsConfig
-                    };*/
+                    };
 
 var goodPlugin = {
                     plugin: require('good'),
@@ -24,15 +24,6 @@ var goodPlugin = {
 var poopPlugin = {
                     plugin: require('poop')
                  };
-
-
-server.route({
-    method: 'GET',
-    path: '/',
-    handler: function(request, reply){
-        reply.file('index.html');
-    }
-});
 
 server.route({
     method: 'GET',
@@ -116,8 +107,8 @@ server.ext('onPreResponse', function(request, reply) {
         return reply();
     }
 });
-//server.pack.register([ moonbootsPlugin, goodPlugin, poopPlugin, customersAPI, usersAPI ], function(err){
-server.pack.register([ goodPlugin, poopPlugin, customersAPI, usersAPI ], function (err) {
+server.pack.register([ moonbootsPlugin, goodPlugin, poopPlugin, customersAPI, usersAPI ], function(err){
+//server.pack.register([ goodPlugin, poopPlugin, customersAPI, usersAPI ], function (err) {
     if (err) throw err;
         // If everything loaded correctly, start the server:
     //!!!Use this code if running via moonBoots!!!

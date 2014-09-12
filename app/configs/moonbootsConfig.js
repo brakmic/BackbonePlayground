@@ -1,5 +1,6 @@
 // this config file was taken from the AmpersandJS framework
-var config = require('getconfig');
+//var config = require('getconfig');
+var config = require('./playground');
 var path = require('path');
 var coffee = require('./coffee_config');
 var stylizer = require('stylizer');
