@@ -28,7 +28,7 @@ Icons & Fonts from [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
 
 ...more to come soon ;)
 
-![Backbone Playground](http://q40.imgup.net/backbone_p1d5e.png "Playground Screenshot")
+![Backbone Playground](http://a54.imgup.net/Untitleda80e.png "Playground Screenshot")
 
 #### Building with Gulp
 
