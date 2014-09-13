@@ -46,8 +46,7 @@ Or use the run-scripts for Windows / *nix `run.bat` respective `run.sh`
 
 Compilation is supported via `configs/coffee_config.js` which is a simple CommonJS module. There's already a  `Cakefile` located in the project root. 
 By default the compilation starts with `cake build` but it can be adjusted by modifying the `Cakefile` and/or `configs/coffee_config.js`.
-The compilation starts on _each page reload_ in _dev_ environment. The compiled JS files are located together with 
-their CoffeeScript counterparts. To change this behavior set a general `--output [DIR]` in `Cakefile`.  
+The compiled JS files are located together with their CoffeeScript counterparts. To change this behavior set a general `--output [DIR]` in `Cakefile`.  
 For example `coffee --compile --output OUT_DIR .` 
 
 More information regarding CoffeeScript compilation can be found [here](http://arcturo.github.io/library/coffeescript/05_compiling.html).
