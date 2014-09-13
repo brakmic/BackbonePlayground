@@ -186,7 +186,7 @@ gulp.task('templates', function() {
 
 //we need index.jade/*.html to put the scripts & styles
 gulp.task('html', function() {
-  stream = gulp.src(paths.src + 'index.jade')
+  stream = gulp.src(paths.templates + 'index.jade')
     .pipe(jade({
       pretty: environment == 'development'
     }));
