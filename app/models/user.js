@@ -11,7 +11,7 @@ module.exports = Backbone.Model.extend({
     validate: function(attrs){
         var errors = [];
         if(!attrs.firstName){
-            errors.push({name: 'user', message: 'First name can\#t be empty'});
+            errors.push({name: 'user', message: 'First name can\'t be empty'});
         }
         if(!attrs.lastName){
             errors.push({name: 'user', message: 'Last name can\'t be empty'});

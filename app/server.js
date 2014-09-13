@@ -30,7 +30,7 @@ server.route({
     method: 'GET',
     path: '/{param*}',
     handler: function(request, reply){
-        reply.file('index.html');
+        reply.file('dist/index.html');
     }
 });
 
@@ -40,19 +40,18 @@ server.route({
     path: '/public/css/{param*}',
     handler:{
         directory: {
-            path: 'public/css/',
+            path: 'dist/css/',
             listing: false
         }
     }
 });
 
-
 server.route({
     method: 'GET',
-    path: '/assets/img/{param*}',
+    path: '/css/{param*}',
     handler:{
         directory: {
-            path: 'public/css/images/binary/',
+            path: 'dist/css/',
             listing: false
         }
     }
@@ -63,7 +62,20 @@ server.route({
     path: '/fonts/{param*}',
     handler:{
         directory: {
-            path: 'public/fonts/',
+            path: 'dist/fonts/',
+            listing: false
+        }
+    }
+});
+
+
+
+server.route({
+    method: 'GET',
+    path: '/assets/img/{param*}',
+    handler:{
+        directory: {
+            path: 'dist/css/images/binary/',
             listing: false
         }
     }
@@ -74,7 +86,7 @@ server.route({
     path: '/public/fonts/{param*}',
     handler:{
         directory: {
-            path: 'public/fonts/',
+            path: 'dist/css/fonts/',
             listing: false
         }
     }
@@ -85,7 +97,7 @@ server.route({
     path: '/scripts/{param*}',
     handler:{
         directory: {
-            path: 'scripts/',
+            path: 'dist/scripts/',
             listing: false
         }
     }

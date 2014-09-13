@@ -8,43 +8,116 @@ var browserify = require('gulp-browserify');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var minify = require('gulp-minify-css');
+var jshint = require('gulp-jshint');
 var templatizer = require('templatizer'); //taken from moonBoots config
 var server = require('./server'); //export from server.js to start HAPI server
+var connect = require('gulp-connect');
+var clean = require('gulp-clean');
+var wrap = require('gulp-wrap-amd');
 var stream;
 
 var environment = 'dev';
 var paths = {
   src: './',
   scripts: './scripts/',
-  dest: './',
+  dest: './dist/',
+  destCss: './dist/css/',
+  destImages: './dist/css/images/',
+  destFonts: './dist/css/fonts/',
+  destScripts: './dist/scripts/',
+  tempCss: './public/css/temp/',
   vendor: './scripts/vendor/',
+  images: './public/css/images/',
+  fonts: './public/css/fonts/',
+  awesomeFonts: './public/fonts/',
   assets: './public/',
   css: './public/css/',
   test: '../test/',
   configs: './configs/',
   templates: './templates/'
-}
+};
 
 gulp.task('set-production', function() {
   environment = 'production';
 });
+
+//connect server
+gulp.task('connect', function () {
+    connect.server({
+        root: '/',
+        port: 3000
+    });
+});
+
+//linting
+gulp.task('lint', function() {
+    gulp.src([
+                './**/*.js',
+                '!./public/**',
+                '!./configs/**',
+                '!./templates/**',
+                '!./scripts/**',
+                '!./node_modules/**'
+        ])
+        .pipe(jshint())
+        .pipe(jshint.reporter('default'))
+        .pipe(jshint.reporter('fail'));
+});
+
+//stylus styles
+gulp.task('stylus-styles', function () {
+    stream = gulp.src(paths.assets + 'css/**/*.styl')
+        .pipe(plumber())
+        .pipe(stylus());
+    if (environment == 'production') {
+        stream.pipe(minify());
+    }
+    stream.pipe(gulp.dest(paths.tempCss));
+});
+
 //default styles
 gulp.task('css-styles', function() {
   stream = gulp.src([
       paths.css + 'bootstrap.dist.css',
       paths.css + 'font-awesome.min.css',
+      paths.tempCss + '**/**',
       paths.css + 'custom.css',
       paths.css + 'app.css'
     ])
     .pipe(plumber())
-    .pipe(concat("styles.css"))
+    .pipe(concat("styles.css"));
 
   if (environment == 'production') {
-    stream.pipe(minify())
+    stream.pipe(minify());
   }
 
-  stream.pipe(gulp.dest(paths.dest + 'public/css/'))
+  stream.pipe(gulp.dest(paths.destCss));
 });
+
+gulp.task('images', function(){
+    stream = gulp.src([
+                        paths.images + '**/**'
+                ])
+    .pipe(plumber());
+    stream.pipe(gulp.dest(paths.destImages));
+});
+
+gulp.task('default-fonts', function(){
+    stream = gulp.src([
+                paths.fonts + '**/**'
+            ])
+    .pipe(plumber());
+    stream.pipe(gulp.dest(paths.destFonts));
+});
+
+gulp.task('fonts-awesome', function(){
+    stream = gulp.src([
+            paths.awesomeFonts + '**/**'
+    ])
+    .pipe(plumber());
+    stream.pipe(gulp.dest(paths.dest + 'fonts'));
+});
+
 //all needed libs
 gulp.task('vendor-scripts', function() {
   stream = gulp.src([
@@ -60,61 +133,71 @@ gulp.task('vendor-scripts', function() {
       paths.vendor + 'backbone.radio.js',
       paths.vendor + 'radio.shim.js'
     ])
-    .pipe(plumber())
-    .pipe(concat("vendor.js"))
+      .pipe(plumber())
+      .pipe(concat("vendor.js"));
+     // ;
 
   if (environment == 'production') {
-    stream.pipe(uglify())
+    stream.pipe(uglify());
   }
 
-  stream.pipe(gulp.dest(paths.scripts))
+  stream.pipe(gulp.dest(paths.destScripts));
 });
+
 //starting point for browserify
-gulp.task('scripts', function() {
-  stream = gulp.src(
-      paths.src + 'app.js')
+gulp.task('own-scripts', function() {
+  stream = gulp.src( [
+                paths.src + 'app.js'
+            ])
+    //.pipe(plumber())
     .pipe(browserify({
       insertGlobals : true,
       debug: environment === 'development'
     }))
-    .pipe(concat('main.js'))
+    .pipe(concat('main.js'));
   if (environment == 'production') {
-    stream.pipe(uglify())
+    stream.pipe(uglify());
   }
-  stream.pipe(gulp.dest(paths.scripts))
+  stream.pipe(gulp.dest(paths.destScripts));
 });
+
+gulp.task('clean', function() {
+    stream = gulp.src([
+
+            paths.dest + '**/**',
+            paths.tempCss + '**/**'
+    ])
+       // .pipe(plumber());
+    stream.pipe(clean({force: true}));
+});
+
 //jade templates (we use templatizer from AmpersandJS project
 // to generate JS-templates/mappings from Jade-files)
 gulp.task('templates', function() {
-  templatizer(paths.templates, paths.templates + 'compiled.js');
-});;
-//we need index.jade/*.html to put the scripts & styles (if using moonBoots there's no need for index.jade/*.html
-//because moonBoots automatically generates index.html with appropriate scripts/styles in it)
-gulp.task('html', function() {
-  gulp.src(paths.src + 'index.jade')
-    .pipe(plumber())
-    .pipe(jade({
-      pretty: environment == 'development'
-    }))
-    .pipe(gulp.dest(paths.dest))
+  //templatizer(paths.templates, paths.templates + 'compiled.js');
 });
 
-gulp.task('stylus-styles', function () {
-    stream = gulp.src(paths.assets + 'css/**/*.styl')
-        .pipe(stylus())
-        .pipe(plumber())
-    if (environment == 'production') {
-        stream.pipe(minify())
-    }
-    stream.pipe(gulp.dest(paths.dest + 'public/css/'))
+//we need index.jade/*.html to put the scripts & styles
+gulp.task('html', function() {
+  stream = gulp.src(paths.src + 'index.jade')
+    .pipe(jade({
+      pretty: environment == 'development'
+    }));
+    stream.pipe(gulp.dest(paths.dest));
 });
 
 gulp.task('server', function(){
     server(); //just a simple call of startServer() in server.js
 });
 
-gulp.task('vendor', ['vendor-scripts']);
-gulp.task('compile', ['templates', 'html', 'stylus-styles' ,'css-styles', 'scripts']);
+gulp.task('vendor',  ['vendor-scripts']);
+gulp.task('app',     ['own-scripts']);
+gulp.task('styles',  ['stylus-styles','css-styles']);
+gulp.task('fonts',   ['default-fonts','fonts-awesome']);
+gulp.task('assets',  ['styles','fonts', 'images']);
+gulp.task('scripts', ['vendor','app']);
+gulp.task('ui',      ['html']);
+gulp.task('compile', [ 'assets', 'ui', 'scripts']);
 
-gulp.task('default', ['vendor', 'compile']);
+gulp.task('default', ['compile']);
 gulp.task('production', ['set-production', 'default']);
