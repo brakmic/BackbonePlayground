@@ -1,5 +1,5 @@
 var BaseView = require('./baseItemView');
-var templates = require('../templates/compiled/templates.js');
+var templates = require('../templates/templates.js');
 var _s = require('underscore.string');
 
 module.exports = BaseView.extend({

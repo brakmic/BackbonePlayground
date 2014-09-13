@@ -1,7 +1,7 @@
 var BaseView = require('./baseItemView');
 var EditView = require('./edit');
 var Preview = require('./preview');
-var templates = require('../templates/compiled/templates.js');
+var templates = require('../templates/templates.js');
 
 module.exports = Marionette.LayoutView.extend({
     tagName: 'div',
