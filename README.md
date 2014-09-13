@@ -29,8 +29,6 @@ Icons & Fonts from [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
 ![Backbone Playground](http://a54.imgup.net/Untitleda80e.png "Playground Screenshot")
 
 #### Building with Gulp
-
-Playground uses Gulp as its build system.
  
 Start server: `gulp server`  
 
