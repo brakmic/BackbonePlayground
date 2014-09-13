@@ -72,15 +72,6 @@ Check the code in `views/blank.js`
 
 ![Backbone.Radio Web Example](http://n33.imgup.net/backbonerabe42.png "Backbone.Radio Web")
 
-### Running without run-scripts
-If you're not using one of the available run-scripts you must set the GETCONFIG_ROOT manually.
-
-Windows: 
-`set GETCONGIF_ROOT=%CD%\configs`
-
-*nix bash:
-`` export GETCONFIG_ROOT=`pwd`/configs ``
-
 ### How to run it
 
 1. download/install [node.js](http://nodejs.org/)
