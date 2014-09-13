@@ -31,6 +31,7 @@
   },
   "devDependencies": {
     "chai": "^1.9.1",
+    "delete": "^0.1.4",
     "gulp-browserify": "^0.5.0",
     "gulp-clean": "^0.3.1",
     "gulp-concat": "^2.4.0",
@@ -47,6 +48,7 @@
     "hapi-dummy-api": "^0.2.0",
     "mocha": "^1.21.4",
     "nib": "^1.0.3",
+    "rimraf": "^2.2.8",
     "sinon": "^1.10.3",
     "sinon-chai": "^2.5.0",
     "through": "^2.3.4"

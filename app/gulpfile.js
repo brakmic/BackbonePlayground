@@ -14,6 +14,7 @@ var server = require('./server'); //export from server.js to start HAPI server
 var connect = require('gulp-connect');
 var clean = require('gulp-clean');
 var wrap = require('gulp-wrap-amd');
+var rimraf = require('rimraf');
 var stream;
 
 var environment = 'dev';
@@ -169,19 +170,17 @@ gulp.task('own-scripts', function() {
 });
 
 gulp.task('clean', function() {
-    stream = gulp.src([
-
-            paths.dest + '**/**',
-            paths.tempCss + '**/**'
-    ])
-    .pipe(plumber());
-    stream.pipe(clean({force: true}));
+    rimraf.sync(paths.dest);
+    rimraf.sync(paths.tempCss);
 });
 
 //jade templates (we use templatizer from AmpersandJS project
 // to generate JS-templates/mappings from Jade-files)
 gulp.task('templates', function() {
-  templatizer(paths.templates, paths.templates + 'compiled.js');
+  templatizer(paths.templates, paths.templates + 'compiled/templates.js');
+  stream = gulp.src(paths.templates + 'compiled/templates.js')
+      .pipe(plumber());
+  stream.pipe(gulp.dest(paths.destScripts));
 });
 
 //we need index.jade/*.html to put the scripts & styles
@@ -203,7 +202,7 @@ gulp.task('styles',  ['stylus-styles','css-styles', 'maps']);
 gulp.task('fonts',   ['default-fonts','fonts-awesome']);
 gulp.task('assets',  ['styles','fonts', 'images']);
 gulp.task('scripts', ['vendor','app']);
-gulp.task('ui',      ['html','templates']);
+gulp.task('ui',      ['templates', 'html']);
 gulp.task('compile', [ 'assets', 'ui', 'scripts']);
 
 gulp.task('default', ['compile']);
