@@ -7,6 +7,7 @@ var stylus = require('gulp-stylus');
 var browserify = require('gulp-browserify');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
+var obfuscate = require('gulp-obfuscate');
 var minify = require('gulp-minify-css');
 var jshint = require('gulp-jshint');
 var templatizer = require('templatizer'); //taken from moonBoots config
@@ -143,7 +144,6 @@ gulp.task('vendor-scripts', function() {
     ])
       .pipe(plumber())
       .pipe(concat("vendor.js"));
-     // ;
 
   if (environment == 'production') {
     stream.pipe(uglify());
@@ -157,7 +157,7 @@ gulp.task('own-scripts', function() {
   stream = gulp.src( [
                 paths.src + 'app.js'
             ])
-    //.pipe(plumber())
+      .pipe(plumber())
     .pipe(browserify({
       insertGlobals : true,
       debug: environment === 'development'
@@ -169,18 +169,16 @@ gulp.task('own-scripts', function() {
   stream.pipe(gulp.dest(paths.destScripts));
 });
 
+//cleanup
 gulp.task('clean', function() {
     rimraf.sync(paths.dest);
     rimraf.sync(paths.tempCss);
 });
 
 //jade templates (we use templatizer from AmpersandJS project
-// to generate JS-templates/mappings from Jade-files)
+// to generate JS-templates/mappings based on Jade-files)
 gulp.task('templates', function() {
   templatizer(paths.templates, paths.templates + 'compiled/templates.js');
-  stream = gulp.src(paths.templates + 'compiled/templates.js')
-      .pipe(plumber());
-  stream.pipe(gulp.dest(paths.destScripts));
 });
 
 //we need index.jade/*.html to put the scripts & styles
@@ -203,7 +201,7 @@ gulp.task('fonts',   ['default-fonts','fonts-awesome']);
 gulp.task('assets',  ['styles','fonts', 'images']);
 gulp.task('scripts', ['vendor','app']);
 gulp.task('ui',      ['templates', 'html']);
-gulp.task('compile', [ 'assets', 'ui', 'scripts']);
+gulp.task('compile', ['assets', 'ui', 'scripts']);
 
-gulp.task('default', ['compile']);
+gulp.task('default', ['clean', 'compile']);
 gulp.task('production', ['set-production', 'default']);
