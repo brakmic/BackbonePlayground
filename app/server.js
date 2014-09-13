@@ -78,7 +78,7 @@ server.route({
     path: '/public/fonts/{param*}',
     handler:{
         directory: {
-            path: 'dist/css/fonts/',
+            path: 'dist/fonts/',
             listing: false
         }
     }

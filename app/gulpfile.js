@@ -81,9 +81,8 @@ gulp.task('css-styles', function() {
       paths.css + 'bootstrap.css',
       paths.css + 'bootstrap-theme.css',
       paths.css + 'font-awesome.min.css',
-      paths.tempCss + '**/**',
-      paths.css + 'custom.css',
-      paths.css + 'app.css'
+      paths.tempCss + 'app.css',
+      paths.css + 'custom.css'
     ])
     .pipe(plumber())
     .pipe(concat("styles.css"));
