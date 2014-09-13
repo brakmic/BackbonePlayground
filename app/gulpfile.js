@@ -173,8 +173,8 @@ gulp.task('clean', function() {
 
             paths.dest + '**/**',
             paths.tempCss + '**/**'
-    ]);
-       // .pipe(plumber());
+    ])
+    .pipe(plumber());
     stream.pipe(clean({force: true}));
 });
 
