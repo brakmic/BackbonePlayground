@@ -181,7 +181,7 @@ gulp.task('clean', function() {
 //jade templates (we use templatizer from AmpersandJS project
 // to generate JS-templates/mappings from Jade-files)
 gulp.task('templates', function() {
-  //templatizer(paths.templates, paths.templates + 'compiled.js');
+  templatizer(paths.templates, paths.templates + 'compiled.js');
 });
 
 //we need index.jade/*.html to put the scripts & styles
@@ -203,7 +203,7 @@ gulp.task('styles',  ['stylus-styles','css-styles', 'maps']);
 gulp.task('fonts',   ['default-fonts','fonts-awesome']);
 gulp.task('assets',  ['styles','fonts', 'images']);
 gulp.task('scripts', ['vendor','app']);
-gulp.task('ui',      ['html']);
+gulp.task('ui',      ['html','templates']);
 gulp.task('compile', [ 'assets', 'ui', 'scripts']);
 
 gulp.task('default', ['compile']);
