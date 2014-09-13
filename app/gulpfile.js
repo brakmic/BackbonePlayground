@@ -78,7 +78,8 @@ gulp.task('stylus-styles', function () {
 //default styles
 gulp.task('css-styles', function() {
   stream = gulp.src([
-      paths.css + 'bootstrap.dist.css',
+      paths.css + 'bootstrap.css',
+      paths.css + 'bootstrap-theme.css',
       paths.css + 'font-awesome.min.css',
       paths.tempCss + '**/**',
       paths.css + 'custom.css',
@@ -92,6 +93,13 @@ gulp.task('css-styles', function() {
   }
 
   stream.pipe(gulp.dest(paths.destCss));
+});
+
+gulp.task('maps', function(){
+    stream = gulp.src(paths.css + '**/*.map')
+        .pipe(plumber());
+
+    stream.pipe(gulp.dest(paths.destCss));
 });
 
 gulp.task('images', function(){
@@ -166,7 +174,7 @@ gulp.task('clean', function() {
 
             paths.dest + '**/**',
             paths.tempCss + '**/**'
-    ])
+    ]);
        // .pipe(plumber());
     stream.pipe(clean({force: true}));
 });
@@ -192,7 +200,7 @@ gulp.task('server', function(){
 
 gulp.task('vendor',  ['vendor-scripts']);
 gulp.task('app',     ['own-scripts']);
-gulp.task('styles',  ['stylus-styles','css-styles']);
+gulp.task('styles',  ['stylus-styles','css-styles', 'maps']);
 gulp.task('fonts',   ['default-fonts','fonts-awesome']);
 gulp.task('assets',  ['styles','fonts', 'images']);
 gulp.task('scripts', ['vendor','app']);

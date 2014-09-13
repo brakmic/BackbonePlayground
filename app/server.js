@@ -1,20 +1,12 @@
 var Hapi = require('hapi');
-//var config = require('getconfig');
 var config = require('./configs/playground');
 var server = new Hapi.Server('localhost', config.http.port);
-//var moonbootsConfig = require(config.root + '/moonbootsConfig2');
 var goodConfig = require(config.root + '/goodConfig');
 var customersAPI = require(config.root + '/customersAPI');
 var usersAPI = require(config.root + '/usersAPI');
 
 var serverName = 'Backbone Playground';
 var internals = {};
-
-
-/*var moonbootsPlugin = {
-                       plugin: require('moonboots_hapi'),
-                       options: moonbootsConfig
-                    };*/
 
 var goodPlugin = {
                     plugin: require('good'),
@@ -129,21 +121,14 @@ server.ext('onPreResponse', function(request, reply) {
         return reply();
     }
 });
-server.pack.register([ goodPlugin, poopPlugin, customersAPI, usersAPI ], function(err){
-//server.pack.register([ goodPlugin, poopPlugin, customersAPI, usersAPI ], function (err) {
-    if (err) throw err;
-        // If everything loaded correctly, start the server:
-    //!!!Use this code if running via moonBoots!!!
-     /*   server.start(function (err) {
-            if (err) throw err;
-            server.log('info', serverName + ' running at: ' + server.info.uri);
-        }); */
-    })
+
 
 function startServer(){ //export for gulp
-    server.start(function (err) {
-        if (err) throw err;
-        server.log('info', serverName + ' running at: ' + server.info.uri);
+    server.pack.register([ goodPlugin, poopPlugin, customersAPI, usersAPI ], function(err){
+        server.start(function (err) {
+            if (err) throw err;
+            server.log('info', serverName + ' running at: ' + server.info.uri);
+        });
     });
 }
 
