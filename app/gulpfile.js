@@ -222,6 +222,7 @@ gulp.task('coffee', function() {
     }
 
     stream.pipe(gulp.dest(paths.destScripts))
+        .pipe(livereload());
 });
 
 //cleanup
