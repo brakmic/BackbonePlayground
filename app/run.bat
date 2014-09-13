@@ -1,2 +1,2 @@
 @echo off
-gulp && gulp server
+gulp live

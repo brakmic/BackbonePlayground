@@ -1,2 +1,2 @@
 #!/bin/sh
-gulp && gulp server
+gulp live

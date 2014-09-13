@@ -17,6 +17,8 @@ var clean = require('gulp-clean');
 var wrap = require('gulp-wrap-amd');
 var coffee = require('gulp-coffee');
 var rimraf = require('rimraf');
+var watch = require('gulp-watch');
+var livereload = require('gulp-livereload');
 var gutil = require('gutil');
 var stream;
 
@@ -68,15 +70,33 @@ gulp.task('lint', function() {
         .pipe(jshint.reporter('fail'));
 });
 
+// Primary task to watch other tasks
+gulp.task('watch', function() {
+    // LiveReload
+    livereload.listen();
+
+    // Watch Sass
+    gulp.watch(
+        [
+            paths.css + '**/*.css'
+        ],
+        ['css-styles']
+    );
+
+});
+
 //stylus styles
 gulp.task('stylus-styles', function () {
-    stream = gulp.src(paths.assets + 'css/**/*.styl')
-        .pipe(plumber())
+    stream = gulp.src(paths.css + '**/*.styl')
+        .pipe(plumber({
+                errorHandler: onError
+            }))
         .pipe(stylus());
     if (environment == 'production') {
         stream.pipe(minify());
     }
-    stream.pipe(gulp.dest(paths.tempCss));
+    stream.pipe(gulp.dest(paths.tempCss))
+        .pipe(livereload());
 });
 
 //default styles
@@ -84,49 +104,58 @@ gulp.task('css-styles', function() {
   stream = gulp.src([
       paths.css + 'bootstrap.css',
       paths.css + 'bootstrap-theme.css',
-      paths.css + 'font-awesome.min.css',
+      paths.css + 'font-awesome.css',
       paths.tempCss + 'app.css',
       paths.css + 'custom.css'
     ])
-    .pipe(plumber())
-    .pipe(concat("styles.css"));
+        .pipe(plumber({
+                errorHandler: onError
+            }))
+        .pipe(concat("styles.css"));
 
-  if (environment == 'production') {
-    stream.pipe(minify());
-  }
-
-  stream.pipe(gulp.dest(paths.destCss));
+    if (environment == 'production') {
+        stream.pipe(minify());
+    }
+     stream.pipe(gulp.dest(paths.destCss))
+         .pipe(livereload());
 });
 
 gulp.task('maps', function(){
     stream = gulp.src(paths.css + '**/*.map')
-        .pipe(plumber());
-
-    stream.pipe(gulp.dest(paths.destCss));
+        .pipe(plumber({
+                errorHandler: onError
+            }))
+        .pipe(gulp.dest(paths.destCss));
 });
 
 gulp.task('images', function(){
     stream = gulp.src([
                         paths.images + '**/**'
                 ])
-    .pipe(plumber());
-    stream.pipe(gulp.dest(paths.destImages));
+    .pipe(plumber({
+                errorHandler: onError
+            }))
+        .pipe(gulp.dest(paths.destImages));
 });
 
 gulp.task('default-fonts', function(){
     stream = gulp.src([
                 paths.fonts + '**/**'
             ])
-    .pipe(plumber());
-    stream.pipe(gulp.dest(paths.destFonts));
+    .pipe(plumber({
+                errorHandler: onError
+            }))
+        .pipe(gulp.dest(paths.destFonts));
 });
 
 gulp.task('fonts-awesome', function(){
     stream = gulp.src([
             paths.awesomeFonts + '**/**'
     ])
-    .pipe(plumber());
-    stream.pipe(gulp.dest(paths.dest + 'fonts'));
+    .pipe(plumber({
+              errorHandler: onError
+          }))
+        .pipe(gulp.dest(paths.dest + 'fonts'));
 });
 
 //all needed libs
@@ -144,7 +173,9 @@ gulp.task('vendor-scripts', function() {
       paths.vendor + 'backbone.radio.js',
       paths.vendor + 'radio.shim.js'
     ])
-      .pipe(plumber())
+      .pipe(plumber({
+                errorHandler: onError
+            }))
       .pipe(concat("vendor.js"));
 
   if (environment == 'production') {
@@ -159,12 +190,15 @@ gulp.task('own-scripts', function() {
   stream = gulp.src( [
                 paths.src + 'app.js'
             ])
-      .pipe(plumber())
+      .pipe(plumber({
+                errorHandler: onError
+            }))
       .pipe(browserify({
                 insertGlobals : true,
                 debug: environment === 'development'
             }))
       .pipe(concat('main.js'));
+
   if (environment == 'production') {
     stream.pipe(uglify());
   }
@@ -175,7 +209,9 @@ gulp.task('own-scripts', function() {
 //compile coffeescript
 gulp.task('coffee', function() {
     gulp.src(paths.src + '*.coffee')
-        .pipe(plumber())
+        .pipe(plumber({
+                errorHandler: onError
+            }))
         .pipe(coffee(
             {
                 bare: true
@@ -205,8 +241,8 @@ gulp.task('html', function() {
   stream = gulp.src(paths.templates + 'index.jade')
     .pipe(jade({
       pretty: environment == 'development'
-    }));
-    stream.pipe(gulp.dest(paths.dest));
+    }))
+      .pipe(gulp.dest(paths.dest));
 });
 
 gulp.task('server', function(){
@@ -222,5 +258,10 @@ gulp.task('scripts', ['coffee', 'vendor','app']);
 gulp.task('ui',      ['templates', 'html']);
 gulp.task('compile', ['assets', 'ui', 'scripts']);
 
+gulp.task('live', ['default', 'server', 'watch']);
 gulp.task('default', ['clean', 'compile']);
 gulp.task('production', ['set-production', 'default']);
+
+var onError = function (err) {
+    gutil.log(gutil.colors.red(err));
+};
