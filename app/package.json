@@ -25,10 +25,7 @@
     "home-dir": "^0.2.0",
     "jade": "^1.5.0",
     "json-stringify-safe": "^5.0.0",
-    "moonboots": "^2.0.6",
-    "moonboots_hapi": "^2.4.0",
     "poop": "^1.2.2",
-    "stylizer": "^1.0.0",
     "templatizer": "^1.0.0",
     "underscore": "^1.6.0",
     "underscore.string": "^2.3.3"
