@@ -38,6 +38,7 @@ Debug build: `gulp`
 
 Production build: `gulp production`   
 
+Or use the run-scripts for Windows / *nix `run.bat` respective `run.sh`
 
 #### CoffeeScript compilation
 

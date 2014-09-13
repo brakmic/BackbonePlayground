@@ -1,1 +1,2 @@
-gulp server
+#!/bin/sh
+gulp && gulp server
