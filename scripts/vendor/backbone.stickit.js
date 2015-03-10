@@ -1,8 +1,3 @@
-//
-// backbone.stickit - v0.8.0
-// The MIT License
-// Copyright (c) 2012 The New York Times, CMS Group, Matthew DeLambo <delambo@gmail.com> 
-//
 // Backbone.Stickit v0.8.0, MIT Licensed
 // Copyright (c) 2012 The New York Times, CMS Group, Matthew DeLambo <delambo@gmail.com>
 
@@ -97,13 +92,14 @@
 
       // Wrap `view.remove` to unbind stickit model and dom events.
       var remove = this.remove;
-      if (!remove.stickitWrapped)
+      if (!remove.stickitWrapped) {
         this.remove = function() {
           var ret = this;
           this.unstickit();
           if (remove) ret = remove.apply(this, arguments);
           return ret;
         };
+      }
       this.remove.stickitWrapped = true;
     },
 
@@ -407,7 +403,7 @@
         val || (val = []);
         $el.each(function(i, el) {
           var checkbox = Backbone.$(el);
-          var checked = _.indexOf(val, checkbox.val()) > -1;
+          var checked = _.contains(val, checkbox.val());
           checkbox.prop('checked', checked);
         });
       } else {

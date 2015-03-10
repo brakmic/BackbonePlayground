@@ -161,7 +161,7 @@ gulp.task('fonts-awesome', function(){
 //all needed libs
 gulp.task('vendor-scripts', function() {
   stream = gulp.src([
-      paths.vendor + 'jquery-2.1.1.js',
+      paths.vendor + 'jquery-2.1.3.js',
       paths.vendor + 'underscore.js',
       paths.vendor + 'underscore.string.js',
       paths.vendor + 'bootstrap.js',

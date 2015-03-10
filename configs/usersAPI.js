@@ -1,6 +1,6 @@
 var API = require('hapi-dummy-api');
 
-module.exports = new API({
+exports.options = {
    data: [
        {
            id: 0,
@@ -27,9 +27,10 @@ module.exports = new API({
            picture: "http://robohash.org/Max"
        },
     ],
+    multiple: true,
     rootUrl: '/api/users',
     idProperty: 'id',
     delay: 3000,
     name: 'fake-users-api',
     version: '0.0.1'
-});
+};

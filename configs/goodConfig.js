@@ -1,7 +1,7 @@
 // good logger options
 module.exports = {
-    subscribers: {
-            'console':   ['request', 'log', 'error'],
-        //'./tmp/logs/': ['request', 'log']
-    }
+    reporters: [{
+        reporter: require('good-console'),
+        args:[{ log: '*', response: '*' }]
+        }]
 };
