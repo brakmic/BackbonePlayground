@@ -1,46 +1,46 @@
 'use strict'
 
-var gulp = require('gulp');
-var jade = require('gulp-jade');
-var plumber = require('gulp-plumber');
-var stylus = require('gulp-stylus');
-var browserify = require('gulp-browserify');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var obfuscate = require('gulp-obfuscate');
-var minify = require('gulp-minify-css');
-var jshint = require('gulp-jshint');
+var gulp        = require('gulp');
+var jade        = require('gulp-jade');
+var plumber     = require('gulp-plumber');
+var stylus      = require('gulp-stylus');
+var browserify  = require('gulp-browserify');
+var concat      = require('gulp-concat');
+var uglify      = require('gulp-uglify');
+var obfuscate   = require('gulp-obfuscate');
+var minify      = require('gulp-minify-css');
+var jshint      = require('gulp-jshint');
 var templatizer = require('templatizer'); //taken from moonBoots config
-var server = require('./server'); //export from server.js to start HAPI server
-var connect = require('gulp-connect');
-var clean = require('gulp-clean');
-var wrap = require('gulp-wrap-amd');
-var coffee = require('gulp-coffee');
-var rimraf = require('rimraf');
-var watch = require('gulp-watch');
-var livereload = require('gulp-livereload');
-var gutil = require('gutil');
+var server      = require('./server'); //export from server.js to start HAPI server
+var connect     = require('gulp-connect');
+var clean       = require('gulp-clean');
+var wrap        = require('gulp-wrap-amd');
+var coffee      = require('gulp-coffee');
+var rimraf      = require('rimraf');
+var watch       = require('gulp-watch');
+var livereload  = require('gulp-livereload');
+var gutil       = require('gutil');
 var stream;
 
 var environment = 'dev';
 var paths = {
-  src: './',
-  scripts: './scripts/',
-  dest: './dist/',
-  destCss: './dist/css/',
-  destImages: './dist/css/images/',
-  destFonts: './dist/css/fonts/',
-  destScripts: './dist/scripts/',
-  tempCss: './public/css/temp/',
-  vendor: './scripts/vendor/',
-  images: './public/css/images/',
-  fonts: './public/css/fonts/',
-  awesomeFonts: './public/fonts/',
-  assets: './public/',
-  css: './public/css/',
-  test: '../test/',
-  configs: './configs/',
-  templates: './templates/'
+              src: './',
+              scripts: './scripts/',
+              dest: './dist/',
+              destCss: './dist/css/',
+              destImages: './dist/css/images/',
+              destFonts: './dist/css/fonts/',
+              destScripts: './dist/scripts/',
+              tempCss: './public/css/temp/',
+              vendor: './scripts/vendor/',
+              images: './public/css/images/',
+              fonts: './public/css/fonts/',
+              awesomeFonts: './public/fonts/',
+              assets: './public/',
+              css: './public/css/',
+              test: '../test/',
+              configs: './configs/',
+              templates: './templates/'
 };
 
 gulp.task('set-production', function() {

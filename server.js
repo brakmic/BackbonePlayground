@@ -6,13 +6,13 @@ var dummyAPI     = require('hapi-dummy-api');
 var customersAPI = require(config.root + '/customersAPI');
 var usersAPI     = require(config.root + '/usersAPI');
 server.connection({
-    host: 'localhost',
-    port: config.http.port
-    });
+                    host: 'localhost',
+                    port: config.http.port
+                    });
 var goodConfig = require(config.root + '/goodConfig');
 
 var serverName = 'Backbone Playground';
-var internals = {};
+var internals  = {};
 
 var goodPlugin = {
                     plugin: require('good'),
