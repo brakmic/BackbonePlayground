@@ -29,7 +29,9 @@
     "poop": "latest",
     "templatizer": "latest",
     "underscore": "latest",
-    "underscore.string": "latest"
+    "underscore.string": "latest",
+    "moment": "latest",
+    "lodash": "latest"
   },
   "devDependencies": {
     "chai": "latest",
