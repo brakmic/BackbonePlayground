@@ -1,5 +1,5 @@
 var Customer = require('../models/customer');
-var _ = require('underscore');
+var _        = require('underscore');
 
 module.exports = Backbone.Collection.extend({
     model: Customer,

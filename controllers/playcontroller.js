@@ -1,8 +1,8 @@
-var TwoWayView = require('../views/twoway');
-var BlankView = require('../views/blank');
+var TwoWayView        = require('../views/twoway');
+var BlankView         = require('../views/blank');
 var CustomersListView = require('../views/customerlist');
-var Customers = require('../collections/customers');
-var Command = require('../models/command');
+var Customers         = require('../collections/customers');
+var Command           = require('../models/command');
 
 module.exports = Marionette.Controller.extend({
     customers: function(){

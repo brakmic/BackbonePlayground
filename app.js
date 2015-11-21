@@ -1,16 +1,16 @@
-var stringify = require('json-stringify-safe');
-var _ = require('underscore');
-var radio = require('backbone.radio');
-var domify = require('domify');
-var templates = require('./templates/templates.js');
-var domReady = require('domready');
-var User = require('./models/user');
-var PlayRouter = require('./routers/playrouter');
+var stringify      = require('json-stringify-safe');
+var _              = require('underscore');
+var radio          = require('backbone.radio');
+var domify         = require('domify');
+var templates      = require('./templates/templates.js');
+var domReady       = require('domready');
+var User           = require('./models/user');
+var PlayRouter     = require('./routers/playrouter');
 var PlayController = require('./controllers/playcontroller');
-var MainLayout = require('./views/marionette/main_layout');
-var HeaderView = require('./views/marionette/header_view');
-var SidebarView = require('./views/marionette/sidebar_view');
-var MainView = require('./views/marionette/main_view');
+var MainLayout     = require('./views/marionette/main_layout');
+var HeaderView     = require('./views/marionette/header_view');
+var SidebarView    = require('./views/marionette/sidebar_view');
+var MainView       = require('./views/marionette/main_view');
 
 module.exports = {
 

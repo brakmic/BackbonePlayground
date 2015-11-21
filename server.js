@@ -1,3 +1,5 @@
+"use strict";
+
 var Hapi         = require('hapi');
 var config       = require('./configs/playground');
 var server       = new Hapi.Server();
@@ -5,6 +7,7 @@ var Good         = require('good');
 var dummyAPI     = require('hapi-dummy-api');
 var customersAPI = require(config.root + '/customersAPI');
 var usersAPI     = require(config.root + '/usersAPI');
+var Inert        = require('inert');
 server.connection({
                     host: 'localhost',
                     port: config.http.port
@@ -18,6 +21,24 @@ var goodPlugin = {
                     plugin: require('good'),
                     options: goodConfig
                  };
+
+
+server.register([
+                    {
+                        register: dummyAPI,
+                        options: customersAPI.options
+                    },
+                    {
+                        register: dummyAPI,
+                        options: usersAPI.options
+                    },
+                    {
+                        register: Inert,
+                        options: null
+                    }
+                    ], function(err){
+            console.log(err);
+    });
 
 
 server.route({
@@ -109,18 +130,7 @@ server.route({
 
 function startServer(){ //export for gulp
 
-    server.register([
-                    {
-                        register: dummyAPI,
-                        options: customersAPI.options
-                    },
-                    {
-                        register: dummyAPI,
-                        options: usersAPI.options
-                    }
-                    ], function(err){
-            console.log(err);
-    });
+
 
     server.start(function () {
         console.log('info', serverName + ' running at: ' + server.info.uri);

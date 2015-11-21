@@ -1,4 +1,4 @@
-'use strict'
+"use strict";
 
 var gulp        = require('gulp');
 var jade        = require('gulp-jade');
@@ -19,6 +19,7 @@ var coffee      = require('gulp-coffee');
 var rimraf      = require('rimraf');
 var watch       = require('gulp-watch');
 var livereload  = require('gulp-livereload');
+var nodemon     = require('gulp-nodemon');
 var gutil       = require('gutil');
 var stream;
 
@@ -248,6 +249,16 @@ gulp.task('html', function() {
 
 gulp.task('server', function(){
     server(); //just a simple call of startServer() in server.js
+   /* nodemon({
+    	script: 'server.js',
+	ext: 'html js',
+	execMap: {
+	   'js': 'babel-node'
+	},
+	env: { NODE_END: 'dev' }
+    }).on('restart', function(){
+	console.log("Server Restarted!");
+    }); */
 });
 
 gulp.task('vendor',  ['vendor-scripts']);
@@ -264,5 +275,5 @@ gulp.task('default', ['clean', 'compile']);
 gulp.task('production', ['set-production', 'default']);
 
 var onError = function (err) {
-    gutil.log(gutil.colors.red(err));
+    gutil.log(err);
 };
