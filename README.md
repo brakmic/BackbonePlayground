@@ -29,12 +29,12 @@ Icons & Fonts from [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
 ![Backbone Playground](http://a54.imgup.net/Untitleda80e.png "Playground Screenshot")
 
 #### Building with Gulp
- 
-Start server: `gulp server`  
 
-Debug build: `gulp`    
+Start server: `gulp server`
 
-Production build: `gulp production`   
+Debug build: `gulp`
+
+Production build: `gulp production`
 
 Debug build with LiveReload: `gulp live`
 
@@ -42,10 +42,10 @@ Or use the run-scripts for Windows / *nix `run.bat` respective `run.sh`
 
 #### CoffeeScript compilation
 
-Compilation is supported via `configs/coffee_config.js` which is a simple CommonJS module. There's already a  `Cakefile` located in the project root. 
+Compilation is supported via `configs/coffee_config.js` which is a simple CommonJS module. There's already a  `Cakefile` located in the project root.
 By default the compilation starts with `cake build` but it can be adjusted by modifying the `Cakefile` and/or `configs/coffee_config.js`.
-The compiled JS files are located together with their CoffeeScript counterparts. To change this behavior set a general `--output [DIR]` in `Cakefile`.  
-For example `coffee --compile --output OUT_DIR .` 
+The compiled JS files are located together with their CoffeeScript counterparts. To change this behavior set a general `--output [DIR]` in `Cakefile`.
+For example `coffee --compile --output OUT_DIR .`
 
 More information regarding CoffeeScript compilation can be found [here](http://arcturo.github.io/library/coffeescript/05_compiling.html).
 
@@ -53,13 +53,13 @@ Install CoffeeScript with `npm i -g coffee-script`
 
 #### MarionetteJS console debugging
 
-The `Marionette.Application` is located under `window.app` 
+The `Marionette.Application` is located under `window.app`
 
 ![MarionetteJS Console](http://t88.imgup.net/marionette5d70.png "MarionetteJS")
 
 #### Backbone.Radio
 
-In the upcoming release 3 of MarionetteJS _Backbone.Radio_ will replace _Backbone.Wreqr_. There's also a [shim](https://gist.github.com/jmeas/7992474cdb1c5672d88b) 
+In the upcoming release 3 of MarionetteJS _Backbone.Radio_ will replace _Backbone.Wreqr_. There's also a [shim](https://gist.github.com/jmeas/7992474cdb1c5672d88b)
 for version 2.1 which is included in Backbone Playground. Here's an example on how to use Backbone.Radio
 
 ![Backbone.Radio Console](http://s86.imgup.net/backbone_r42e4.png "Backbone.Radio Console")
@@ -87,4 +87,4 @@ Check the code in `views/blank.js`
 
 #### License
 
-MIT
+<a href="https://github.com/brakmic/BackbonePlayground/blob/master/LICENSE">MIT</a>
